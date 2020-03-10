@@ -1,0 +1,67 @@
+.header {
+    display: flex;
+    flex-flow: row nowrap;
+    flex: 1;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 25px 30px;
+
+}
+
+.hamburger {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    display: none;
+}
+
+.hamburger img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media screen and (max-width:950px) {
+
+    .header img {
+        width: 350px;
+    }
+
+    .heroBanner {
+        font-size: 2.5rem;
+        height: 400px;
+    }
+
+}
+
+@media screen and (max-width:850px) {
+
+    .nav {
+        display: none;
+    }
+
+    .hamburger {
+        display: inline-flex;
+    }
+
+    .header {
+        padding: 15px 25px;
+    }
+
+    .heroBanner {
+        font-size: 2rem;
+        height: 300px;  
+    }
+}
+
+@media screen and (max-width:700px) {
+    
+    .heroBanner {
+        font-size: 1.5rem;
+        height: 300px;  
+    }
+
+
+}

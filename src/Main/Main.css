@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto|Mandali|Roboto+Slab&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    min-height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    background-color: #F1F1F1;
+
+}
+
+.darkBackground {
+    background-color: #333333;
+}
+
+.redBackground {
+    background-color: #990000;
+}
+
+.lightGrayBackground {
+    background-color: lightgray;
+}
+
+.whiteBackground {
+    background-color: #FFFFFF;
+}
+
+.container {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    flex: 1;
+}
+
+.full {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+}

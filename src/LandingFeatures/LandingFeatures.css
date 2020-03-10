@@ -1,0 +1,65 @@
+.featuresContainer {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto Slab', serif;
+    padding: 20px 0 40px 0;
+}
+
+.featuresPrice {
+    font-size: 4rem;
+    color: #B40101;
+    padding: 0 10px;
+}
+
+.featuresRow {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 100%;
+
+}
+
+.featuresULContainer {
+    flex-basis: 31%;
+    margin: 10px;
+    padding: 10px;
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.1rem;
+}
+
+.featuresULContainer ul {
+    line-height: 2rem;
+    text-align: left;
+}
+
+.featuresButton {
+    background-color: #B40101;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.perMonth {
+    font-size: 2rem;
+    color: #B40101;
+    padding: 0 10px;
+}
+
+@media screen and (max-width:950px) {
+
+
+}
+
+@media screen and (max-width:850px) {
+
+
+}
+
+@media screen and (max-width:700px) {
+    
+
+}

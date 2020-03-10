@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab|Bebas+Neue&display=swap');
+
+html {
+    scroll-behavior: smooth;
+  }
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.full {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    margin: auto;
+}
+
+.redBackground {
+    background-color: #B40101;
+}
+
+.darkBackground {
+    background-color: #333333;
+}

@@ -1,0 +1,28 @@
+.heroBanner {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 500px;
+    background-image: url('../img/heroBanner.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+	background-position: center center;
+	color: #FFFFFF;
+	font-size: 3.5rem;
+	font-family: 'Roboto', sans-serif;
+    margin-bottom:0px;
+    padding: 20px;
+
+}
+
+.heroBannerText {
+    margin: 5%;
+    text-align: center;
+    max-width: 900px;
+}
+
+.heroBold {
+    font-weight: bold;
+}

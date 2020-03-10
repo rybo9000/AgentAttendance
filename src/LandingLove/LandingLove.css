@@ -1,0 +1,45 @@
+.goingToLoveBackground {
+    background-color: #F8F8F8;
+    
+}
+
+#goingToLoveContainer {
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 10px 30px 10px;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    color: #333333;
+    font-size: 1rem;
+}
+
+.goingToLoveHeader {
+    font-family: 'Roboto Slab', serif;
+    font-size: 2.5rem;
+    font-weight: normal;
+}
+
+@media screen and (max-width:950px) {
+
+    .goingToLoveContainer {
+        font-size: 1rem;
+        padding: 10px 10px 30px 10px;
+    }
+    
+    .goingToLoveHeader {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width:850px) {
+
+}
+
+@media screen and (max-width:700px) {
+    
+
+}
+
