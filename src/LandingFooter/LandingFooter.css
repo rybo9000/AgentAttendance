@@ -1,55 +1,59 @@
-footer {
+.landingVeryDarkBackground {
+    background-color: #1D1D1D;
+}
+
+.landingFooter {
     margin-top: 30px;
     padding-top: 30px;
 
 }
 
-.footerDiv {
+.landingFooterDiv {
     width: 20%;
     color:#999999;
     font-size: 12px;
     font-family: 'Roboto', sans-serif;
     font-weight:300px;
     line-height: 1.75rem;
-    margin: 10px;
+    margin: 10px 10px 20px 10px;
 }
 
-#footerDivAbout {
+#landingFooterAbout {
     width: 40%;
     line-height: 1rem;
 }
 
-.footerDivPadding {
+.landingFooterPadding {
     padding-left: 20px;
 }
 
-.footerDiv ul {
+.landingFooterDiv ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
 
-.footerDiv a {
+.landingFooter a {
     color: #999999;
     text-decoration: none;
 }
 
-.footerDiv a:link {
+.landingFooter a:link {
     color: #999999;
     text-decoration: none;
 }
 
-.footerDiv a:visited {
+.landingFooter a:visited {
     color: #999999;
     text-decoration: none;
 }
 
-.footerDiv a:hover {
+.landingFooter a:hover {
     color: #FFFFFF;
     text-decoration: underline;
 }
 
-.footerTopHeader{
+.landingFooterTopHeader{
 	 
     font-size: 14px;
     font-family: 'Roboto', sans-serif;
@@ -57,18 +61,19 @@ footer {
     color:#FFFFFF;
 }
 
-.footerContact {
+.landingFooterContact {
     font-family: 'Roboto Slab', serif;
     font-size: 1.25rem;
 }
 
-.footerDiv hr {
+.landingFooterDiv hr {
     margin: 20px 0;
 }
 
-.copyright {
+.landingCopyright {
     font-family: 'Roboto', sans-serif;
-    background-color: #1D1D1D;
     color: #999999;
-    font-size: 1.25rem;
+    font-size: 1rem;
+    width: 100%;
+    padding: 10px 0 10px 30px;
 }

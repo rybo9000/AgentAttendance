@@ -13,15 +13,11 @@ html, body {
 }
 
 main {
-    padding: 30px 0;
+    padding-top: 30px;
 }
 
 .darkBackground {
     background-color: #333333;
-}
-
-.veryDarkBackground {
-    background-color: #1D1D1D;
 }
 
 .redBackground {
@@ -164,17 +160,6 @@ main {
 
 .thing img {
     margin-left: 15px;
-}
-
-.thing a {
-
-    color: #333333;
-    text-decoration: none;
-}
-
-.thing a:visited {
-    text-decoration: none;
-    color: #333333;
 }
 
 .thingName {

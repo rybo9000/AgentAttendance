@@ -1,0 +1,29 @@
+.mcStatContainer {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    background-color:#FFFFFF;
+    min-height: 150px;
+}
+
+.mcStat {
+    flex: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.mcStatTop {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 3rem;
+    color: #333333;
+    font-weight: bold;
+}
+
+.mcStatBottom {
+    font-family: 'Roboto Condensed', sans-serif;  
+    color: #333333;
+    font-size: 1rem;
+}

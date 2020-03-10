@@ -4,8 +4,8 @@ import './LandingHero.css';
 
 function LandingHero() {
     return (
-        <section class='heroBanner'>
-            <span class='heroBannerText'>A TRAINING TRACKING SOLUTION <span class='heroBold'>BUILT FOR KW MARKET CENTERS</span></span>
+        <section className='heroBanner'>
+            <span className='heroBannerText'>A TRAINING TRACKING SOLUTION <span className='heroBold'>BUILT FOR KW MARKET CENTERS</span></span>
         </section>
     )
 }

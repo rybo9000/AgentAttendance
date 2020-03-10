@@ -8,7 +8,7 @@ class SignUp extends React.Component {
     render() {
         return (
             <div className='signupBody'>
-        <img src={landingLogo} />    
+        <img src={landingLogo} alt='Agent Attendance Logo'/>    
         <div className='signupContainer'>    
                 <form className='signupForm'>
                     <p><label for='name' className='signupLabel'>Name</label></p>

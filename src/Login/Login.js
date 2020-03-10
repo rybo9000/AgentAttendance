@@ -9,7 +9,7 @@ class Login extends React.Component {
         return (
             <div className='loginBody'>
                 <div className='loginWrapper'>
-                    <img src={landingLogo} />
+                    <img src={landingLogo} alt='Agent Attendance Logo' />
                     <div className='loginContainer'>
                         <form className='loginForm'>
                             <div>

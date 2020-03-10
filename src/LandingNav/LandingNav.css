@@ -1,4 +1,4 @@
-.nav {
+.landingNav {
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-end;
@@ -9,7 +9,7 @@
     font-weight: bold;
 }
 
-.nav ul {
+.landingNav ul {
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
@@ -18,19 +18,34 @@
     padding: 0;
 }
 
-.nav ul li {
+.landingNav ul li {
     margin: 0 10px;
 }
 
-.nav a {
+.landingNav a {
     color: #333333;
     text-decoration: none;
 }
 
-.nav a:visited {
+.landingNav a:visited {
     color: #333333;
 }
 
-.nav a:hover {
+.landingNav a:hover {
     color: #555555;
+}
+
+@media screen and (max-width:950px) {
+
+}
+
+@media screen and (max-width:850px) {
+
+    .landingNav {
+        display: none;
+    }
+}
+
+@media screen and (max-width:700px) {
+
 }

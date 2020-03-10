@@ -4,7 +4,7 @@ import './LandingNav.css';
 
 function LandingNav() {
     return (
-        <nav className='nav'>
+        <nav className='landingNav'>
         <ul>
             <li><Link to='/signup'>SIGN UP / FREE TRIAL</Link></li>
             <li><a href='#about'>ABOUT</a></li>

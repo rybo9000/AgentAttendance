@@ -14,7 +14,7 @@ class MainHeader extends React.Component {
             <div className='container'>
                 <div className='headerContent'>
                     <img src={logoSmall} alt='Agent Attendance Logo' />
-                    <span className='hamburger'><img src={hamburgerWhite} /></span>
+                    <span className='hamburger'><img src={hamburgerWhite} alt='Hamburger Menu Icon' /></span>
                     <Nav />
                 </div>
             </div>

@@ -14,14 +14,14 @@ class Landing extends React.Component {
     render() {
         return (
             <>
-                <div className='container'>
+                <div className='landingContainer'>
                     <LandingHeader />
                 </div>
                 <LandingHero />
                 <LandingLove />
-                <LandingFeatures />
+                <LandingFeatures {...this.props} />
                 <LandingStats />
-                <LandingTryFree />
+                <LandingTryFree {...this.props} />
                 <LandingFooter />
 
             </>

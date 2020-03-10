@@ -36,10 +36,27 @@
 
 @media screen and (max-width:850px) {
 
+    .goingToLoveContainer {
+        font-size: .75rem;
+        padding: 5px 5px 20px 5px;
+    }
+    
+    .goingToLoveHeader {
+        font-size: 1.75rem;
+    }
+
 }
 
 @media screen and (max-width:700px) {
     
+    .goingToLoveContainer {
+        font-size: .5rem;
+        padding: 5px 5px 20px 5px;
+    }
+    
+    .goingToLoveHeader {
+        font-size: 1.25rem;
+    }
 
 }
 

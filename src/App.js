@@ -5,6 +5,9 @@ import Landing from './Landing/Landing';
 import SignUp from './SignUp/SignUp';
 import Login from './Login/Login';
 import Main from './Main/Main';
+import Users from './Users/Users';
+import Classes from './Classes/Classes';
+import CheckIn from './CheckIn/CheckIn';
 
 import './App.css';
 
@@ -16,6 +19,9 @@ function App() {
         <Route path='/signup' component={SignUp} />
         <Route path='/login' component={Login} />
         <Route path='/main' component={Main} />
+        <Route path='/users' component={Users} />
+        <Route path='/classes' component={Classes} />
+        <Route path='/checkin' component={CheckIn} />
       </Switch>
     </div>
   );

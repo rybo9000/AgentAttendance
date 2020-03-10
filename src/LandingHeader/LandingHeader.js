@@ -10,7 +10,7 @@ import './LandingHeader.css';
 
 function LandingHeader() {
     return (
-        <header className='header'>
+        <header className='landingHeader'>
             <img src={landingLogo} alt='Agent Attendance Logo' />
             <span className='hamburger'>
                 <img src={hamburger} alt='Hamburger Icon for Menu'/>

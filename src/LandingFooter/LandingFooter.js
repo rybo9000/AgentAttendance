@@ -5,10 +5,10 @@ import './LandingFooter.css';
 
 function LandingFooter() {
     return (
-        <footer className='full darkBackground'>
-            <div className='container'>
-                <div className='footerDiv footerDivPadding'>
-                    <span className='footerTopHeader'>FEATURES</span>
+        <footer className='landingFull landingDarkBackground landingFooter'>
+            <div className='landingContainer'>
+                <div className='landingFooterDiv landingFooterPadding'>
+                    <span className='landingFooterTopHeader'>FEATURES</span>
                     <ul>
                         <li>Track Attendance For Classes</li>
                         <li>Track Attendance For Meetings</li>
@@ -18,8 +18,8 @@ function LandingFooter() {
                         
                     </ul>
                 </div>
-                <div className='footerDiv footerDivPadding'>
-                    <span className='footerTopHeader'>BENEFITS</span>
+                <div className='landingFooterDiv landingFooterPadding'>
+                    <span className='landingFooterTopHeader'>BENEFITS</span>
                     <ul>
                         <li>Save Time In Classes</li>
                         <li>Save Time In Meetings</li>
@@ -28,15 +28,15 @@ function LandingFooter() {
                         
                     </ul>
                 </div>
-                <div className='footerDiv footerDivPadding'>
-                    <span className='footerTopHeader '>CONTACT</span>
+                <div className='landingFooterDiv landingFooterPadding'>
+                    <span className='landingFooterTopHeader'>CONTACT</span>
                     <ul>
                         <li>Agent Attendance</li>
                         <li>info@agentattendance.com</li>
                     </ul>
                 </div>
-                <div className='footerDiv' id='footerDivAbout'>
-                    <span className='footerTopHeader '>ABOUT AGENT ATTENDANCE</span>
+                <div className='landingFooterDiv' id='landingFooterAbout'>
+                    <span className='landingFooterTopHeader'>ABOUT AGENT ATTENDANCE</span>
                     <p>
                         My name is Ryan Fielder. I am the creator of Agent Attendance. I am also the previous Technical Director for Keller Williams Market Center #1 in Austin, Texas.
                     </p>
@@ -50,9 +50,16 @@ function LandingFooter() {
                         To solve this problem I created Agent Attendance.
                     </p>
                     <hr />
-                    <span class='footerContact'>CONTACT ME WITH QUESTIONS</span>
+                    <span className='landingFooterContact'>CONTACT ME WITH QUESTIONS</span>
 
 
+                </div>
+            </div>
+            <div className='landingFull landingVeryDarkBackground'>
+                <div className='landingContainer'>
+                    <div className='landingCopyright'>
+                    &copy; ATX Tech Services 2020
+                    </div>
                 </div>
             </div>
 

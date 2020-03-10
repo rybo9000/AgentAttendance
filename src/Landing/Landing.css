@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab|Bebas+Neue&display=swap');
 
-html {
-    scroll-behavior: smooth;
-  }
-
 * {
     box-sizing: border-box;
 }
 
-.container {
+html {
+    scroll-behavior: smooth;
+  }
+
+.landingContainer {
     display: flex;
     flex-flow: row nowrap;
     width: 100%;
@@ -16,17 +16,17 @@ html {
     margin: auto;
 }
 
-.full {
+.landingFull {
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: column nowrap;
     width: 100%;
     margin: auto;
 }
 
-.redBackground {
+.landingRedBackground {
     background-color: #B40101;
 }
 
-.darkBackground {
+.landingDarkBackground {
     background-color: #333333;
 }

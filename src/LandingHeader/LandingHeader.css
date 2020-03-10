@@ -1,4 +1,4 @@
-.header {
+.landingHeader {
     display: flex;
     flex-flow: row nowrap;
     flex: 1;
@@ -8,7 +8,7 @@
 
 }
 
-.hamburger {
+.landingHamburger {
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
@@ -18,14 +18,14 @@
     display: none;
 }
 
-.hamburger img {
+.landingHamburger img {
     max-width: 100%;
     height: auto;
 }
 
 @media screen and (max-width:950px) {
 
-    .header img {
+    .landingHeader img {
         width: 350px;
     }
 
@@ -42,11 +42,11 @@
         display: none;
     }
 
-    .hamburger {
+    .landingHamburger {
         display: inline-flex;
     }
 
-    .header {
+    .landingHeader {
         padding: 15px 25px;
     }
 
