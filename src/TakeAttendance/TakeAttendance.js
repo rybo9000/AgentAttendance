@@ -2,29 +2,48 @@ import React from 'react';
 
 import Class from '../Class/Class';
 
-import '../Main/Main.css';
+import '../config/style.css';
 import './TakeAttendance.css';
 
-function TakeAttendance(props) {
+class TakeAttendance extends React.Component {
     
-    const classes = props.classes.map((theClass, index) => {
+    constructor(props) {
+        super(props)
+
+        const mcclasses = [
+            'Orientation',
+            'Realty 101',
+            'Buying & Selling',
+            'Close The Deal',
+            'Financing 101'
+        ];
         
-        const bgColor = index % 2 === 0
-            ? 'whiteBackground'
-            : 'lightGrayBackground'
-        
-        return <Class theClassName={theClass} key={index} bgColor={bgColor}/>
-    })
+        this.state = {
+            classes: mcclasses
+        }
+    }
     
-    return (
-        <section className='half'>
-            <div className='halfTop darkBackground twoRem'>
-                Take Attendance
-            </div>
-            {classes}
-            <div className='halfBottom darkBackground'></div>
-        </section>
-    )
+    render() {
+    
+        const classes = this.state.classes.map((theClass, index) => {
+            
+            const bgColor = index % 2 === 0
+                ? 'whiteBackground'
+                : 'lightGrayBackground'
+            
+            return <Class theClassName={theClass} key={index} bgColor={bgColor}/>
+        })
+        
+        return (
+            <section className='half'>
+                <div className='halfTop darkBackground twoRem'>
+                    Take Attendance
+                </div>
+                {classes}
+                <div className='halfBottom darkBackground'></div>
+            </section>
+        )
+    }
 }
 
 export default TakeAttendance;

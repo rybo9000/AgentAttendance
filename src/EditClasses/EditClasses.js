@@ -1,35 +1,48 @@
 import React from 'react';
 
-import go from '../img/go.png';
+import Class from '../Class/Class';
 
-import '../Main/Main.css';
+import '../config/style.css';
 import './EditClasses.css';
 
-function EditClasses() {
-    return (
-        <section className='half'>
-            <div className='halfTop darkBackground twoRem'>
-                Edit Classes
-            </div>
-            <div className='thing whiteBackground'>
-                <span className='thingName'>Orientation</span>
-                <img src={go} alt='' />
-            </div>
-            <div className='thing lightGrayBackground'>
-                <span className='thingName'>Basics 101</span>
-                <img src={go} alt='' />
-            </div>
-            <div className='thing whiteBackground'>
-                <span className='thingName'>Advanced Calculus</span>
-                <img src={go} alt='' />
-            </div>
-            <div className='thing lightGrayBackground'>
-                <span className='thingName'>Geography</span>
-                <img src={go} alt='' />
-            </div>
-            <div className='halfBottom darkBackground'></div>
-        </section>
-    )
+class EditClasses extends React.Component {
+    
+    constructor(props) {
+        super(props)
+
+        const classes = [
+            'Orientation',
+            'Buying & Selling',
+            'Financing 101',
+            'Rentals as Income'
+        ]
+        
+        this.state = {
+            classes: classes
+        }
+    }
+    
+    render() {
+        
+        const classes = this.state.classes.map((theClassName, index) => {
+            
+            const bgColor = index % 2 === 0
+            ? 'whiteBackground'
+            : 'lightGrayBackground';
+            
+            return <Class theClassName={theClassName} key={index} bgColor={bgColor} />
+        })
+        
+        return (
+            <section className='half'>
+                <div className='halfTop darkBackground twoRem'>
+                    Edit Classes
+                </div>
+                {classes}
+                <div className='halfBottom darkBackground'></div>
+            </section>
+        )
+    }
 }
 
 export default EditClasses;

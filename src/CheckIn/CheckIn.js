@@ -3,6 +3,28 @@ import React from 'react';
 import './CheckIn.css';
 
 class CheckIn extends React.Component {
+    
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            username: '',
+            password: ''
+        }
+    }
+
+    updateInput = (name, value) => {
+        this.setState({
+            [name]: value
+        })
+    }
+
+    onSubmit = (e) => {
+        e.preventDefault();
+        console.log('username is ', this.state.username);
+        console.log('password is ', this.state.password);
+    }
+    
     render() {
         return (
             <div className='checkinBody'>
@@ -13,14 +35,14 @@ class CheckIn extends React.Component {
                                 <span className='checkingInto'>You Are Checking Into</span>
                                 <span className='theClassName'>Orientation 101</span>
                                 <div>
-                                    <label for='username' className='checkinLabel'>Username</label>
-                                    <input type='text' id='username' className='checkinControl' />
+                                    <label htmlFor='username' className='checkinLabel'>Username</label>
+                                    <input type='text' id='username' name='username' className='checkinControl' onChange={e => this.updateInput(e.target.name, e.target.value)} />
                                 </div>
                                 <div>
-                                <label for='password' className='checkinLabel'>Password</label>
-                                <input type='password' id='password' className='checkinControl' />
+                                <label htmlFor='password' className='checkinLabel'>Password</label>
+                                <input type='password' id='password' name='password' className='checkinControl' onChange={e => this.updateInput(e.target.name, e.target.value)} />
                                 </div>
-                                <button type='submit' className='checkinButton'>Check In</button>
+                                <button type='submit' className='checkinButton' disabled={!(this.state.username && this.state.password)} onClick={e => this.onSubmit(e)}>Check In</button>
                             </form>
                         </div>
                     </div>

@@ -5,6 +5,8 @@
     align-items: center;
     background-color:#F1F1F1;
     padding-top: 5%;
+    min-height: 100vh;
+
 }
 
 .signupContainer {
@@ -48,6 +50,10 @@
     background-color: #F5F5F5;
 }
 
+.signupControl:focus {
+    outline: none;
+}
+
 .signupLoginButton {
     border-radius: 3px;
     display: block;
@@ -57,4 +63,20 @@
     color: white;
     border: none;
     margin: 20px 0;
+}
+
+.signupLoginButton:focus {
+    outline: none;
+}
+
+.signupLoginButton:hover {
+    opacity: .9;
+}
+
+.signupLoginButton:active {
+    opacity: 1;
+}
+
+.signupLoginButton:disabled {
+    opacity: .2;
 }

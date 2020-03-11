@@ -5,10 +5,12 @@ import EditClasses from '../EditClasses/EditClasses';
 import AddClass from '../AddClass/AddClass';
 import Footer from '../Footer/Footer';
 
+import '../config/style.css';
 import './Classes.css';
 
 class Classes extends React.Component {
     render() {
+        
         return (
             <>
                 <Header />

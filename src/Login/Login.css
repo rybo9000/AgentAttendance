@@ -60,6 +60,10 @@
     width: 90%;
 }
 
+.loginControl:focus {
+    outline: none;
+}
+
 .loginControl:hover {
     border: 1px solid #D0D0D0;
     background-color: #F5F5F5;
@@ -80,4 +84,20 @@
     color: white;
     border: none;
     margin: 20px 0;
+}
+
+.loginButton:hover {
+    opacity: .9;
+}
+
+.loginButton:active {
+    opacity: 1;
+}
+
+.loginButton:focus {
+    outline: none;
+}
+
+.loginButton:disabled {
+    opacity: .2;
 }

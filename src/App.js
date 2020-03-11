@@ -8,6 +8,7 @@ import Main from './Main/Main';
 import Users from './Users/Users';
 import Classes from './Classes/Classes';
 import CheckIn from './CheckIn/CheckIn';
+import Reports from './Reports/Reports';
 
 import './App.css';
 
@@ -22,6 +23,7 @@ function App() {
         <Route path='/users' component={Users} />
         <Route path='/classes' component={Classes} />
         <Route path='/checkin' component={CheckIn} />
+        <Route path='/reports' component={Reports} />
       </Switch>
     </div>
   );

@@ -12,9 +12,7 @@ html, body {
 
 }
 
-main {
-    padding: 30px 0;
-}
+/* BACKGROUND COLOR CLASSES */
 
 .darkBackground {
     background-color: #333333;
@@ -34,6 +32,10 @@ main {
 
 .whiteBackground {
     background-color: #FFFFFF;
+}
+
+main {
+    padding: 30px 0;
 }
 
 .siteContent {
@@ -133,6 +135,10 @@ main {
     background-color: #F5F5F5;
 }
 
+.halfFormInput:focus {
+    outline: none;
+}
+
 .halfFormButton {
     border-radius: 3px;
     display: block;
@@ -144,6 +150,18 @@ main {
     margin: 20px 0;
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 2rem;
+}
+
+.halfFormButton:hover {
+    opacity: .9;
+}
+
+.halfFormButton:active {
+    opacity: 1;
+}
+
+.halfFormButton:focus {
+    outline: none;
 }
 
 .halfFormButton:disabled {

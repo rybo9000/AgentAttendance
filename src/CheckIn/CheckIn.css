@@ -95,6 +95,22 @@
     margin: 20px 0;
 }
 
+.checkinButton:focus{
+    outline: none;
+}
+
+.checkinButton:hover {
+    opacity: .9
+}
+
+.checkinButton:active {
+    opacity: 1
+}
+
+.checkinButton:disabled {
+    opacity: .2
+}
+
 .checkInLogout {
     font-weight: bold;
     margin: 10px;

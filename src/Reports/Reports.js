@@ -1,23 +1,21 @@
 import React from 'react';
 
 import Header from '../Header/Header';
-import TakeAttendance from '../TakeAttendance/TakeAttendance';
-import MCStats from '../MCStats/MCStats';
 import Footer from '../Footer/Footer';
 
-import '../config/style.css';
-import './Main.css';
+import ReportSelector from '../ReportSelector/ReportSelector';
 
-class Main extends React.Component {
-    
+import '../config/style.css';
+import './Reports.css';
+
+class Reports extends React.Component {
     render() {
         return (
             <>
                 <Header />
                 <main className='full siteContent'>
                     <div className='container'>
-                        <TakeAttendance />
-                        <MCStats />
+                        <ReportSelector />
                     </div>
                 </main>
                 <Footer />
@@ -26,4 +24,4 @@ class Main extends React.Component {
     }
 }
 
-export default Main;
+export default Reports;

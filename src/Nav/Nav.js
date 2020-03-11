@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import '../Main/Main.css';
+import '../config/style.css';
 import './Nav.css';
 
 function Nav() {
@@ -12,7 +12,7 @@ function Nav() {
                 <li><Link to='/users'>USERS</Link></li>
                 <li><Link to='/classes'>CLASSES</Link></li>
                 <li><Link to='/reports'>REPORTS</Link></li>
-                <li>LOGOUT</li>
+                <li><Link to='/login'>LOGOUT</Link></li>
             </ul>
         </nav>
     )

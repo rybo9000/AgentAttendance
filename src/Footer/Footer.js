@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import exclusive from '../img/exclusive.png';
 
-import '../Main/Main.css';
+import '../config/style.css';
 import './Footer.css';
 
 function Footer() {
@@ -13,7 +13,7 @@ function Footer() {
                 <div className='footerDiv footerDivPadding'>
                     <span className='footerTopHeader'>NAVIGATE</span>
                     <ul>
-                        <li><Link to='/'>Home</Link></li>
+                        <li><Link to='/main'>Home</Link></li>
                         <li><Link to='/users'>Users</Link></li>
                         <li><Link to='/classes'>Classes</Link></li>
                         <li><Link to='/reports'>Reports</Link></li>
@@ -24,16 +24,16 @@ function Footer() {
                 <div className='footerDiv footerDivPadding'>
                     <span className='footerTopHeader'>PARTICIPATE</span>
                     <ul>
-                        <li><Link to='/'>Report A Bug</Link></li>
+                        <li><Link to='/main'>Report A Bug</Link></li>
                         
                     </ul>
                 </div>
                 <div className='footerDiv footerDivPadding'>
                     <span className='footerTopHeader '>RESOURCES</span>
                     <ul>
-                        <li><Link to='/'>Flyers & Signs</Link></li>
-                        <li><Link to='/'>Recommended Tablets</Link></li>
-                        <li><Link to='/'>Upload Users</Link></li>
+                        <li><Link to='/main'>Flyers & Signs</Link></li>
+                        <li><Link to='/main'>Recommended Tablets</Link></li>
+                        <li><Link to='/main'>Upload Users</Link></li>
                         
                     </ul>
                 </div>

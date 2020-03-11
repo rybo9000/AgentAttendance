@@ -4,7 +4,7 @@ import logoSmall from '../img/logoSmall.png';
 import hamburgerWhite from '../img/hamburgerWhite.png';
 import Nav from '../Nav/Nav';
 
-import '../Main/Main.css';
+import '../config/style.css';
 import './Header.css';
 
 class MainHeader extends React.Component {
