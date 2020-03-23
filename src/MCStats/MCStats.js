@@ -1,6 +1,8 @@
 import React from 'react';
+import JWT from 'jsonwebtoken';
 
 import '../config/style.css';
+import config from '../config/config.js';
 import './MCStats.css';
 
 class MCStats extends React.Component {
@@ -21,6 +23,56 @@ class MCStats extends React.Component {
             checkIns: stats.checkIns,
             agents: stats.agents
         }
+    }
+    
+    componentDidMount() {
+        const token = localStorage.getItem('aatoken')
+        const decodedJWT = JWT.verify(token, config.REACT_APP_JWT_SECRET)
+
+        const options = {
+            headers: {
+                "mcid": decodedJWT.mcid
+            }
+        }
+
+        // CONVERT ALL OF THESE TO PROMISE.ALL OR SQL JOIN
+        
+        // GET MCNAME
+        fetch('http://localhost:8000/api/mc/stats/getname', options)
+            .then(response => response.json())
+            .then(response => {
+                
+                this.setState({
+                    mcName: response[0].mcname
+                })
+            })
+        
+        // GET TOTAL CLASSES FROM DB
+        fetch('http://localhost:8000/api/mc/stats/totalclasses', options)
+            .then(response => response.json())
+            .then(response => {
+                this.setState({
+                    classes: response[0].count
+                })
+            })
+
+        // GET TOTAL CHECKINS FROM DB
+        fetch('http://localhost:8000/api/mc/stats/totalcheckins', options)
+            .then(response => response.json())
+            .then(response => {
+                this.setState({
+                    checkIns: response[0].count
+                })
+        })
+
+        // GET TOTAL AGENTS FROM DB
+        fetch('http://localhost:8000/api/mc/stats/totalagents', options)
+            .then(response => response.json())
+            .then(response => {
+                this.setState({
+                    agents: response[0].count
+                })
+        })
     }
     
     render() {

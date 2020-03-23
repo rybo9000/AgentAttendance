@@ -1,5 +1,7 @@
 import React from 'react';
+import JWT from 'jsonwebtoken';
 
+import config from '../config/config.js';
 import '../config/style.css';
 import './AddClass.css';
 
@@ -20,8 +22,31 @@ class AddClass extends React.Component {
     }
 
     handleSubmit = (e) => {
+        
         e.preventDefault();
-        console.log(this.state.classname);
+
+        const token = localStorage.getItem('aatoken')
+        const decodedJWT = JWT.verify(token, config.REACT_APP_JWT_SECRET)
+        
+        const mcid = decodedJWT.mcid;
+        
+        const { classname } = this.state
+
+        const newClass = { classname, mcid }
+        
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(newClass)
+        }
+
+        fetch('http://localhost:8000/api/mc/classes', options)
+
+        this.setState({
+            classname: ''
+        })
 
     }
     

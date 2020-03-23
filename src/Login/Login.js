@@ -12,7 +12,8 @@ class Login extends React.Component {
         this.state = {
             username:'',
             password:'',
-            marketcenter: null
+            marketcenter: null,
+            mclist: []
         }
 
     }
@@ -22,14 +23,71 @@ class Login extends React.Component {
             [name]: value
         })
     }
-
+    
     submitHandler = (e) => {
         e.preventDefault();
-        console.log('username is ', this.state.username);
-        console.log('pasword is ', this.state.password);
-        console.log('marketcenter is ', this.state.marketcenter);
+        
+        const { username, password, mcid } = this.state;
+
+        const signupData = {
+            username,
+            password,
+            mcid
+        }
+        
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(signupData)
+        }
+        
+        fetch('http://localhost:8000/api/signin', options)
+            .then(response => response.json())
+            .then(response => {
+                    
+                    let token = response;
+
+                    if (typeof(token) === 'string') {
+                        window.localStorage.setItem('aatoken', token)
+                        this.props.history.push('/main')
+                    }
+
+                    else {
+                        console.log('login error.  please try again')
+                        this.setState({
+                            username:'',
+                            password:'',
+                            marketcenter: null 
+                        })
+                    }
+                    
+
+            })
+
+            
+ 
+
+ 
     }
 
+    componentDidMount() {
+        fetch('http://localhost:8000/api/signin/classes')
+        .then (response => response.json())
+        .then (response => {
+            
+            const marketcenterlist = response.map(marketcenter => {
+            return <option value={marketcenter.id} key={marketcenter.id} >{marketcenter.mcname}</option>
+            })
+
+            this.setState({
+                mclist: marketcenterlist
+            })
+
+        })
+    }
+    
     render() {
         return (
             <div className='loginBody'>
@@ -39,20 +97,20 @@ class Login extends React.Component {
                         <form className='loginForm'>
                             <div>
                                 <label htmlFor='username' className='loginLabel'>Username</label>
-                                <input type='text' id='username' name='username' className='loginControl' onChange={e => this.handleChange(e.target.name, e.target.value)}/>
+                                <input type='text' id='username' name='username' className='loginControl' value={this.state.username} onChange={e => this.handleChange(e.target.name, e.target.value)}/>
                             </div>
                             <div>
                                 <label htmlFor='password' className='loginLabel'>Password</label>
-                                <input type='text' id='password' name='password' className='loginControl' onChange={e => this.handleChange(e.target.name, e.target.value)}/>
+                                <input type='password' id='password' name='password' className='loginControl' value={this.state.password} onChange={e => this.handleChange(e.target.name, e.target.value)}/>
                             </div>
                             <div>
-                            <label htmlFor='marketcenter' className='loginLabel'>Market Center</label>
-                            <select id='marketcenter' name='marketcenter' className='loginControl' onChange={e => this.handleChange(e.target.name, e.target.value)}>
+                            <label htmlFor='mcid' className='loginLabel'>Market Center</label>
+                            <select id='mcid' name='mcid' className='loginControl' value={this.state.mcid} onChange={e => this.handleChange(e.target.name, e.target.value)}>
                                 <option value={null}>Select Your Market Center</option>
-                                <option value='kwswmc'>Test Market Center</option>
+                                {this.state.mclist}
                             </select>
                             </div>
-                            <button type='submit' className='loginButton' disabled={!(this.state.username && this.state.password && this.state.marketcenter)} onClick={e => this.submitHandler(e)}>Login</button>
+                            <button type='submit' className='loginButton' disabled={!(this.state.username && this.state.password && this.state.mcid)} onClick={e => this.submitHandler(e)}>Login</button>
                         </form>
                         
                     </div>

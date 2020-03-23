@@ -2,36 +2,20 @@ import React from 'react';
 
 import User from '../User/User';
 
+import config from '../config/config.js';
 import '../config/style.css';
 import './EditUsers.css';
 
-class EditUsers extends React.Component {
+function EditUsers(props) {
         
-    constructor(props) {
-        super(props)
-
-        const users = [
-            'John Riley',
-            'Bill Wellington',
-            'Tim Baker',
-            'Marcia Smith',
-            'John Hughes'
-        ]
-
-        this.state = {
-            users: users
-        }
-    }
-        
-    render() {
             
-            const users = this.state.users.map((user, index) => {
+            const users = props.users.map((user, index) => {
             
                 const bgColor = index % 2 === 0
                     ? 'whiteBackground'
                     : 'lightGrayBackground';
                 
-                return <User user={user} key={index} bgColor={bgColor} />
+                return <User firstname={user.firstname} lastname ={user.lastname} id={user.id} key={index} bgColor={bgColor} />
             })
             
             return (
@@ -43,7 +27,6 @@ class EditUsers extends React.Component {
                     <div className='halfBottom darkBackground'></div>
                 </section>
             )
-        }
 
 }
 

@@ -10,10 +10,12 @@ class SignUp extends React.Component {
         super(props)
 
         this.state = {
-            name: '',
+            firstname: '',
+            lastname: '',
             username: '',
             password: '',
-            marketcenter: ''
+            mcname: '',
+            kwid: ''
         }
     }
 
@@ -25,10 +27,34 @@ class SignUp extends React.Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        console.log('name is ', this.state.name);
-        console.log('username is', this.state.username);
-        console.log('password is ', this.state.password);
-        console.log('marketcenter is ', this.state.marketcenter);
+        
+        const { firstname, lastname, username, password, mcname, kwid, email } = this.state;
+
+        const signupData = {
+            firstname,
+            lastname,
+            username,
+            password,
+            mcname,
+            kwid,
+            email
+        }
+        
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(signupData)
+        }
+        
+        fetch('http://localhost:8000/api/signup/marketcenter', options)
+            .then(response => response.json())
+            .then(response => {
+                window.localStorage.setItem('aatoken', response)
+            })
+
+        this.props.history.push('/main')
     }
 
     render() {
@@ -36,16 +62,22 @@ class SignUp extends React.Component {
             <div className='signupBody'>
         <img src={landingLogo} alt='Agent Attendance Logo'/>    
         <div className='signupContainer'>    
-                <form className='signupForm'>
-                    <p><label htmlFor='name' className='signupLabel'>Name</label></p>
-                    <p><input type='text' id='name' name='name' className='signupControl' onChange={e => this.updateInput(e.target.name, e.target.value)} /></p>
+                <form className='signupForm' onSubmit={e => this.onSubmit(e)}>
+                    <p><label htmlFor='firstname' className='signupLabel'>First Name</label></p>
+                    <p><input type='text' id='firstname' name='firstname' className='signupControl' onChange={e => this.updateInput(e.target.name, e.target.value)} required /></p>
+                    <p><label htmlFor='lastname' className='signupLabel'>Last Name</label></p>
+                    <p><input type='text' id='lastname' name='lastname' className='signupControl' onChange={e => this.updateInput(e.target.name, e.target.value)} required /></p>
                     <p><label htmlFor='username' className='signupLabel'>Username</label></p>
-                    <p><input type='text' id='username' name='username' className='signupControl' onChange={e => this.updateInput(e.target.name, e.target.value)} /></p>
+                    <p><input type='text' id='username' name='username' className='signupControl' onChange={e => this.updateInput(e.target.name, e.target.value)} required /></p>
                     <p><label htmlFor='password' className='signupLabel'>Password</label></p>
-                    <p><input type='password' id='password' name='password' className='signupControl' onChange={e => this.updateInput(e.target.name, e.target.value)} /></p>
-                    <p><label htmlFor='marketcenter' className='signupLabel'>Market Center</label></p>
-                    <p><input type='text' id='marketcenter' name='marketcenter' className='signupControl'  onChange={e => this.updateInput(e.target.name, e.target.value)} /></p>
-                    <p><button type='submit' className='signupLoginButton' disabled={!(this.state.name && this.state.username && this.state.password && this.state.marketcenter)} onClick={e => this.onSubmit(e)}>Submit</button></p>
+                    <p><input type='password' id='password' name='password' className='signupControl' onChange={e => this.updateInput(e.target.name, e.target.value)} required /></p>
+                    <p><label htmlFor='email' className='signupLabel'>E-Mail Address</label></p>
+                    <p><input type='email' id='email' name='email' className='signupControl' onChange={e => this.updateInput(e.target.name, e.target.value)} required /></p>
+                    <p><label htmlFor='mcname' className='signupLabel'>Market Center Name</label></p>
+                    <p><input type='text' id='mcname' name='mcname' className='signupControl'  onChange={e => this.updateInput(e.target.name, e.target.value)} required /></p>
+                    <p><label htmlFor='kwid' className='signupLabel'>Market Center ID</label></p>
+                    <p><input type='text' id='kwid' name='kwid' className='signupControl'  onChange={e => this.updateInput(e.target.name, e.target.value)} required /></p>
+                    <p><button type='submit' className='signupLoginButton' disabled={!(this.state.firstname && this.state.lastname && this.state.username && this.state.password && this.state.mcname && this.state.kwid)} >Submit</button></p>
                 </form>
 
         </div>

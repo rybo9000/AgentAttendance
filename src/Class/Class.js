@@ -13,7 +13,7 @@ function Class(props) {
     return (
         <div className={theClass}>
         <span className='thingName'><Link to='/checkin'>{props.theClassName}</Link></span>
-        <Link to='/checkin'><img src={go} alt='' /></Link>
+        <Link to={props.link}><img src={go} alt='' /></Link>
         </div> 
     )
 }
