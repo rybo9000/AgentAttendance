@@ -9,44 +9,9 @@ import './EditClasses.css';
 
 class EditClasses extends React.Component {
     
-    constructor(props) {
-        super(props)
-
-        const mcclasses = [
-            {name: 'Orientation', id: 1},
-            {name: 'Realty 101', id: 2},
-            {name: 'Buying & Selling', id: 3},
-            {name: 'Close The Deal', id: 4},
-            {name: 'Financing 101', id: 5}
-        ];
-        
-        this.state = {
-            classname: mcclasses
-        }
-    }
-
-    componentDidMount() {
-        
-        const token = localStorage.getItem('aatoken')
-        const decodedJWT = JWT.verify(token, config.REACT_APP_JWT_SECRET)
-        
-        const options = {
-            headers: {
-                "mcid": decodedJWT.mcid
-            }
-        }
-        
-        // FETCH CLASSES AND SET STATE
-        fetch('http://localhost:8000/api/mc/classes', options)
-            .then(response => response.json())
-            .then(classname => this.setState({
-                classname
-            }))
-    }
-    
     render() {
         
-        const classes = this.state.classname.map((theClassName, index) => {
+        const classes = this.props.classList.map((theClassName, index) => {
             
             const bgColor = index % 2 === 0
             ? 'whiteBackground'

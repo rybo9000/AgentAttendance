@@ -22,7 +22,7 @@ function App() {
         <Route path='/main' component={Main} />
         <Route path='/users' component={Users} />
         <Route path='/classes' component={Classes} />
-        <Route path='/checkin' component={CheckIn} />
+        <Route path='/checkin/:id' component={CheckIn} />
         <Route path='/reports' component={Reports} />
       </Switch>
     </div>

@@ -65,8 +65,6 @@ class Users extends React.Component {
 
         const newUser = { firstname, lastname, username, password, email, mcid }
         
-        console.log(newUser)
-        
         const options = {
             method: 'POST',
             headers: {
@@ -76,15 +74,25 @@ class Users extends React.Component {
         }
 
         fetch('http://localhost:8000/api/mc/users', options)
-
-        this.setState({
-            firstname: '',
-            lastname: '',
-            username: '',
-            password:'',
-            email: '',
-            users: this.state.users
+        .then (response => response.json())
+        .then (response => {
+            this.setState({
+                firstname: '',
+                lastname: '',
+                username: '',
+                password:'',
+                email: '',
+                users: [{
+                    firstname: response[0].firstname, 
+                    lastname: response[0].lastname, 
+                    id: response[0].id
+                },...this.state.users]
+            })
         })
+
+
+
+
             
     }
 

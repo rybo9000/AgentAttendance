@@ -1,5 +1,7 @@
 import React from 'react';
+import JWT from 'jsonwebtoken';
 
+import config from '../config/config.js';
 import './CheckIn.css';
 
 class CheckIn extends React.Component {
@@ -21,8 +23,36 @@ class CheckIn extends React.Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        console.log('username is ', this.state.username);
-        console.log('password is ', this.state.password);
+        
+        const token = localStorage.getItem('aatoken')
+        const decodedJWT = JWT.verify(token, config.REACT_APP_JWT_SECRET)
+
+        const mcid = decodedJWT.mcid;
+        
+        const { username, password } = this.state;
+
+        const classid = this.props.match.params.id;
+        
+        const checkInData = { username, password, mcid, classid };
+        
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(checkInData)
+        }
+        
+        fetch('http://localhost:8000/api/checkin', options)
+            .then(response => response.json())
+            .then(response => {
+                this.setState({
+                    username: '',
+                    password: ''
+                })
+            })
+            .catch(response => console.log(response))
+            
     }
     
     render() {
@@ -31,18 +61,18 @@ class CheckIn extends React.Component {
                 <div className='checkinWrapper'>
                     <div className='checkinContainer'>
                         <div className='checkinForm'>
-                            <form className='checkinForm'>
+                            <form className='checkinForm' onSubmit={e => this.onSubmit(e)}>
                                 <span className='checkingInto'>You Are Checking Into</span>
                                 <span className='theClassName'>Orientation 101</span>
                                 <div>
                                     <label htmlFor='username' className='checkinLabel'>Username</label>
-                                    <input type='text' id='username' name='username' className='checkinControl' onChange={e => this.updateInput(e.target.name, e.target.value)} />
+                                    <input type='text' id='username' name='username' className='checkinControl' value={this.state.username} onChange={e => this.updateInput(e.target.name, e.target.value)} />
                                 </div>
                                 <div>
                                 <label htmlFor='password' className='checkinLabel'>Password</label>
-                                <input type='password' id='password' name='password' className='checkinControl' onChange={e => this.updateInput(e.target.name, e.target.value)} />
+                                <input type='password' id='password' name='password' className='checkinControl' value={this.state.password} onChange={e => this.updateInput(e.target.name, e.target.value)} />
                                 </div>
-                                <button type='submit' className='checkinButton' disabled={!(this.state.username && this.state.password)} onClick={e => this.onSubmit(e)}>Check In</button>
+                                <button type='submit' className='checkinButton' disabled={!(this.state.username && this.state.password)} >Check In</button>
                             </form>
                         </div>
                     </div>
