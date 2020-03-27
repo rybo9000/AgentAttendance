@@ -38,7 +38,7 @@ class MCStats extends React.Component {
         // CONVERT ALL OF THESE TO PROMISE.ALL OR SQL JOIN
         
         // GET MCNAME
-        fetch('http://localhost:8000/api/mc/stats/getname', options)
+        fetch(`${config.REACT_APP_API_ENDPOINT}/api/mc/stats/getname`, options)
             .then(response => response.json())
             .then(response => {
                 
@@ -48,7 +48,7 @@ class MCStats extends React.Component {
             })
         
         // GET TOTAL CLASSES FROM DB
-        fetch('http://localhost:8000/api/mc/stats/totalclasses', options)
+        fetch(`${config.REACT_APP_API_ENDPOINT}/api/mc/stats/totalclasses`, options)
             .then(response => response.json())
             .then(response => {
                 this.setState({
@@ -57,7 +57,7 @@ class MCStats extends React.Component {
             })
 
         // GET TOTAL CHECKINS FROM DB
-        fetch('http://localhost:8000/api/mc/stats/totalcheckins', options)
+        fetch(`${config.REACT_APP_API_ENDPOINT}/api/mc/stats/totalcheckins`, options)
             .then(response => response.json())
             .then(response => {
                 this.setState({
@@ -66,7 +66,7 @@ class MCStats extends React.Component {
         })
 
         // GET TOTAL AGENTS FROM DB
-        fetch('http://localhost:8000/api/mc/stats/totalagents', options)
+        fetch(`${config.REACT_APP_API_ENDPOINT}/api/mc/stats/totalagents`, options)
             .then(response => response.json())
             .then(response => {
                 this.setState({

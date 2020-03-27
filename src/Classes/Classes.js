@@ -76,7 +76,7 @@ class Classes extends React.Component {
             body: JSON.stringify(newClass)
         }
 
-        fetch('http://localhost:8000/api/mc/classes', options)
+        fetch(`${config.REACT_APP_API_ENDPOINT}/api/mc/classes`, options)
             .then(response => response.json())
             .then(response => {
                 
