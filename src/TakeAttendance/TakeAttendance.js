@@ -29,7 +29,6 @@ class TakeAttendance extends React.Component {
         
         const token = localStorage.getItem('aatoken')
         const decodedJWT = JWT.verify(token, config.REACT_APP_JWT_SECRET)
-        console.log(decodedJWT.mcid)
         
         const options = {
             headers: {
@@ -38,7 +37,7 @@ class TakeAttendance extends React.Component {
         }
         
         // FETCH CLASSES AND SET STATE
-        fetch('http://localhost:8000/api/mc/classes', options)
+        fetch(`${config.REACT_APP_API_ENDPOINT}/api/mc/classes`, options)
             .then(response => response.json())
             .then(classname => this.setState({
                 classname

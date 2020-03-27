@@ -3,6 +3,7 @@ import React from 'react';
 import landingLogo from '../img/landingLogo.png';
 
 import './SignUp.css';
+import config from '../config/config.js';
 
 class SignUp extends React.Component {
     
@@ -48,7 +49,7 @@ class SignUp extends React.Component {
             body: JSON.stringify(signupData)
         }
         
-        fetch('http://localhost:8000/api/signup/marketcenter', options)
+        fetch(`${config.REACT_APP_API_ENDPOINT}/api/signup/marketcenter`, options)
             .then(response => response.json())
             .then(response => {
                 window.localStorage.setItem('aatoken', response)

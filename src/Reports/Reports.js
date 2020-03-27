@@ -20,7 +20,8 @@ class Reports extends React.Component {
         this.state = {
             reportSelect: null,
             selectedClass: null,
-            classList: []
+            classList: [],
+            rows: []
         }
     }
 
@@ -28,6 +29,27 @@ class Reports extends React.Component {
         this.setState({
             [name]: value
         })
+    }
+    
+    fetchRows = (selectedClass) => {
+        
+        console.log('selectedClass value = ' + selectedClass)
+        
+        if(selectedClass !== '') {
+            
+            const token = localStorage.getItem('aatoken')
+            const decodedJWT = JWT.verify(token, config.REACT_APP_JWT_SECRET)
+            
+            fetch(`${config.REACT_APP_API_ENDPOINT}/api/reports/byclass?&classid=${selectedClass}&mcid=${decodedJWT.mcid}`)
+                .then(results => results.json())
+                .then(response => this.setState({
+                    rows: response
+                }))
+        } else {
+            this.setState({
+                rows: []
+            })
+        }
     }
     
     componentDidMount() {
@@ -42,21 +64,22 @@ class Reports extends React.Component {
         }
         
         // FETCH CLASSES AND SET STATE
-        fetch('http://localhost:8000/api/mc/classes', options)
+        fetch(`${config.REACT_APP_API_ENDPOINT}/api/mc/classes`, options)
             .then(response => response.json())
             .then(classList => this.setState({
                 classList
             }))
+            .catch({ error: 'there was an error' })
     }
     
     render() {
         
         const options = this.state.reportSelect === 'byclass'
-            ? <ReportOptionsByClass selectedClass={this.state.selectedClass} handleUpdate={this.handleUpdate} classList={this.state.classList} />
+            ? <ReportOptionsByClass selectedClass={this.state.selectedClass} handleUpdate={this.handleUpdate} fetchRows={this.fetchRows} classList={this.state.classList} />
             : ''
 
         const report = this.state.selectedClass !== null
-            ? <ByClassReport />
+            ? <ByClassReport rows={this.state.rows}/>
             : ''
 
         return (

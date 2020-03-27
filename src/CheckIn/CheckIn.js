@@ -43,7 +43,7 @@ class CheckIn extends React.Component {
             body: JSON.stringify(checkInData)
         }
         
-        fetch('http://localhost:8000/api/checkin', options)
+        fetch(`${config.REACT_APP_API_ENDPOINT}/api/checkin`, options)
             .then(response => response.json())
             .then(response => {
                 this.setState({

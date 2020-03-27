@@ -45,7 +45,7 @@ class Users extends React.Component {
         }
         
         // FETCH CLASSES AND SET STATE
-        fetch('http://localhost:8000/api/mc/users', options)
+        fetch(`${config.REACT_APP_API_ENDPOINT}/api/mc/users`, options)
             .then(response => response.json())
             .then(users => this.setState({
                 users
@@ -73,7 +73,7 @@ class Users extends React.Component {
             body: JSON.stringify(newUser)
         }
 
-        fetch('http://localhost:8000/api/mc/users', options)
+        fetch(`${config.REACT_APP_API_ENDPOINT}/api/mc/users`, options)
         .then (response => response.json())
         .then (response => {
             this.setState({

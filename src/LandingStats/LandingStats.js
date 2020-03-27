@@ -5,6 +5,7 @@ import totalClasses from '../img/totalClasses.jpg';
 import totalAgents from '../img/totalAgents.jpg';
 import totalCheckIn from '../img/totalCheckIn.jpg';
 
+import config from '../config/config.js';
 import '../Landing/Landing.css';
 import './LandingStats.css';
 
@@ -24,28 +25,28 @@ class LandingStats extends React.Component {
     componentDidMount() {
 
         // MARKET CENTERS
-        fetch('http://localhost:8000/api/stats/marketcenters')
+        fetch(`${config.REACT_APP_API_ENDPOINT}/api/stats/marketcenters`)
             .then(response => response.json())
             .then(response => this.setState({
                 total_mc: response[0].count
             }))
         
         // CLASSES
-        fetch('http://localhost:8000/api/stats/classes')
+        fetch(`${config.REACT_APP_API_ENDPOINT}/api/stats/classes`)
             .then(response => response.json())
             .then(response => this.setState({
                 total_classes: response[0].count
             }))
 
         // AGENTS
-        fetch('http://localhost:8000/api/stats/agents')
+        fetch(`${config.REACT_APP_API_ENDPOINT}/api/stats/agents`)
             .then(response => response.json())
             .then(response => this.setState({
                 total_agents: response[0].count
             }))
 
         // CHECK-INS
-        fetch('http://localhost:8000/api/stats/checkins')
+        fetch(`${config.REACT_APP_API_ENDPOINT}/api/stats/checkins`)
             .then(response => response.json())
             .then(response => this.setState({
                 total_checkins: response[0].count

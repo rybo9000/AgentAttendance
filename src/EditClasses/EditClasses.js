@@ -1,9 +1,7 @@
 import React from 'react';
-import JWT from 'jsonwebtoken';
 
 import Class from '../Class/Class';
 
-import config from '../config/config.js';
 import '../config/style.css';
 import './EditClasses.css';
 

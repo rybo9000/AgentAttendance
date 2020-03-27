@@ -5,11 +5,11 @@ import './ReportSelector.css';
 
 function ReportSelector(props) {
     return (
-        <div class='reportSelector'>
+        <div className='reportSelector'>
             <form>
-                <label for='reportSelect'>Select A Report:</label>
+                <label htmlFor='reportSelect'>Select A Report:</label>
                 <select onChange = {e => props.handleUpdate(e.target.name, e.target.value)} value={props.reportSelect} id='reportSelect' name='reportSelect' >
-                    <option value='null'>Select A Report</option>
+                    <option value=''>Select A Report</option>
                     <option value='byclass'>Attendance By Class</option>
                 </select>
             </form>

@@ -3,6 +3,7 @@ import React from 'react';
 import landingLogo from '../img/landingLogo.png';
 
 import './Login.css';
+import config from '../config/config.js';
 
 class Login extends React.Component {
     
@@ -43,7 +44,7 @@ class Login extends React.Component {
             body: JSON.stringify(signupData)
         }
         
-        fetch('http://localhost:8000/api/signin', options)
+        fetch(`${config.REACT_APP_API_ENDPOINT}/api/signin`, options)
             .then(response => response.json())
             .then(response => {
                     
@@ -73,7 +74,7 @@ class Login extends React.Component {
     }
 
     componentDidMount() {
-        fetch('http://localhost:8000/api/signin/classes')
+        fetch(`${config.REACT_APP_API_ENDPOINT}/api/signin/classes`)
         .then (response => response.json())
         .then (response => {
             

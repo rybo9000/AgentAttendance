@@ -1,5 +1,6 @@
-const config = {
-    REACT_APP_JWT_SECRET: "rE1LLkvvvQMbzXCD1YfW6l4LEPkZZPb2"
+export default {
+    
+    REACT_APP_JWT_SECRET: process.env.REACT_APP_JWT_SECRET,
+    REACT_APP_API_ENDPOINT: process.env.REACT_APP_API_ENDPOINT || 'http://localhost:8000'
+    
 }
-
-export default config;
