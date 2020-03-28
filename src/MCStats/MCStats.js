@@ -27,52 +27,59 @@ class MCStats extends React.Component {
     
     componentDidMount() {
         const token = localStorage.getItem('aatoken')
-        const decodedJWT = JWT.verify(token, config.REACT_APP_JWT_SECRET)
+        
+        if (token) {
 
-        const options = {
-            headers: {
-                "mcid": decodedJWT.mcid
+            const decodedJWT = JWT.verify(token, config.REACT_APP_JWT_SECRET)
+
+            const options = {
+                headers: {
+                    "mcid": decodedJWT.mcid
+                }
             }
+    
+            // CONVERT ALL OF THESE TO PROMISE.ALL OR SQL JOIN
+            
+            // GET MCNAME
+            fetch(`${config.REACT_APP_API_ENDPOINT}/api/mc/stats/getname`, options)
+                .then(response => response.json())
+                .then(response => {
+                    
+                    this.setState({
+                        mcName: response[0].mcname
+                    })
+                })
+            
+            // GET TOTAL CLASSES FROM DB
+            fetch(`${config.REACT_APP_API_ENDPOINT}/api/mc/stats/totalclasses`, options)
+                .then(response => response.json())
+                .then(response => {
+                    this.setState({
+                        classes: response[0].count
+                    })
+                })
+    
+            // GET TOTAL CHECKINS FROM DB
+            fetch(`${config.REACT_APP_API_ENDPOINT}/api/mc/stats/totalcheckins`, options)
+                .then(response => response.json())
+                .then(response => {
+                    this.setState({
+                        checkIns: response[0].count
+                    })
+            })
+    
+            // GET TOTAL AGENTS FROM DB
+            fetch(`${config.REACT_APP_API_ENDPOINT}/api/mc/stats/totalagents`, options)
+                .then(response => response.json())
+                .then(response => {
+                    this.setState({
+                        agents: response[0].count
+                    })
+            })
+
         }
-
-        // CONVERT ALL OF THESE TO PROMISE.ALL OR SQL JOIN
         
-        // GET MCNAME
-        fetch(`${config.REACT_APP_API_ENDPOINT}/api/mc/stats/getname`, options)
-            .then(response => response.json())
-            .then(response => {
-                
-                this.setState({
-                    mcName: response[0].mcname
-                })
-            })
-        
-        // GET TOTAL CLASSES FROM DB
-        fetch(`${config.REACT_APP_API_ENDPOINT}/api/mc/stats/totalclasses`, options)
-            .then(response => response.json())
-            .then(response => {
-                this.setState({
-                    classes: response[0].count
-                })
-            })
 
-        // GET TOTAL CHECKINS FROM DB
-        fetch(`${config.REACT_APP_API_ENDPOINT}/api/mc/stats/totalcheckins`, options)
-            .then(response => response.json())
-            .then(response => {
-                this.setState({
-                    checkIns: response[0].count
-                })
-        })
-
-        // GET TOTAL AGENTS FROM DB
-        fetch(`${config.REACT_APP_API_ENDPOINT}/api/mc/stats/totalagents`, options)
-            .then(response => response.json())
-            .then(response => {
-                this.setState({
-                    agents: response[0].count
-                })
-        })
     }
     
     render() {

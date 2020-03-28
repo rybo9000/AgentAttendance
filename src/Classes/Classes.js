@@ -33,20 +33,31 @@ class Classes extends React.Component {
     componentDidMount() {
         
         const token = localStorage.getItem('aatoken')
-        const decodedJWT = JWT.verify(token, config.REACT_APP_JWT_SECRET)
         
-        const options = {
-            headers: {
-                "mcid": decodedJWT.mcid
+        if (!token) {
+            this.props.history.push('/login')
+        }
+
+        else {
+
+            const decodedJWT = JWT.verify(token, config.REACT_APP_JWT_SECRET)
+        
+            const options = {
+                headers: {
+                    "mcid": decodedJWT.mcid
+                }
             }
+            
+            // FETCH CLASSES AND SET STATE
+            fetch(`${config.REACT_APP_API_ENDPOINT}/api/mc/classes`, options)
+                .then(response => response.json())
+                .then(classname => this.setState({
+                    classname
+                }))
+
         }
         
-        // FETCH CLASSES AND SET STATE
-        fetch(`${config.REACT_APP_API_ENDPOINT}/api/mc/classes`, options)
-            .then(response => response.json())
-            .then(classname => this.setState({
-                classname
-            }))
+
     }
     
     updateInput = (name, value) => {

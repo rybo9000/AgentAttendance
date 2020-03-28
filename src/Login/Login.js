@@ -14,7 +14,8 @@ class Login extends React.Component {
             username:'',
             password:'',
             marketcenter: null,
-            mclist: []
+            mclist: [],
+            error: null
         }
 
     }
@@ -56,11 +57,11 @@ class Login extends React.Component {
                     }
 
                     else {
-                        console.log('login error.  please try again')
                         this.setState({
                             username:'',
                             password:'',
-                            marketcenter: null 
+                            marketcenter: null, 
+                            error: response.error
                         })
                     }
                     
@@ -74,6 +75,9 @@ class Login extends React.Component {
     }
 
     componentDidMount() {
+        
+        localStorage.removeItem("aatoken");
+        
         fetch(`${config.REACT_APP_API_ENDPOINT}/api/signin/classes`)
         .then (response => response.json())
         .then (response => {
@@ -90,10 +94,16 @@ class Login extends React.Component {
     }
     
     render() {
+        
+        const displayError = (!this.state.error)
+            ? ''
+            : <div className='errorDiv'>{this.state.error}</div>
+        
         return (
             <div className='loginBody'>
                 <div className='loginWrapper'>
                     <img src={landingLogo} alt='Agent Attendance Logo' />
+                    {displayError}
                     <div className='loginContainer'>
                         <form className='loginForm'>
                             <div>

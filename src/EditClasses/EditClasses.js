@@ -15,7 +15,7 @@ class EditClasses extends React.Component {
             ? 'whiteBackground'
             : 'lightGrayBackground';
 
-            const link = `/editclass/${theClassName.id}`;
+            const link = `/checkin/${theClassName.id}`;
             
             return <Class theClassName={theClassName.classname} key={index} bgColor={bgColor} id={theClassName.id} link={link}/>
         })
@@ -23,7 +23,7 @@ class EditClasses extends React.Component {
         return (
             <section className='half'>
                 <div className='halfTop darkBackground twoRem'>
-                    Edit Classes
+                    Current Classes
                 </div>
                 {classes}
                 <div className='halfBottom darkBackground'></div>

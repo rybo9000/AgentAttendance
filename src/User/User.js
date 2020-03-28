@@ -14,8 +14,7 @@ function User(props) {
     
     return (
         <div className={theClass}>
-        <span className='thingName'><Link to='/checkin'>{`${props.firstname} ${props.lastname}`}</Link></span>
-        <Link to={link}><img src={go} alt='' /></Link>
+        <span className='thingName'>{`${props.firstname} ${props.lastname}`}</span>
         </div> 
     )
 }

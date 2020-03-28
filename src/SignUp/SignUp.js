@@ -16,7 +16,8 @@ class SignUp extends React.Component {
             username: '',
             password: '',
             mcname: '',
-            kwid: ''
+            kwid: '',
+            error: null
         }
     }
 
@@ -52,13 +53,30 @@ class SignUp extends React.Component {
         fetch(`${config.REACT_APP_API_ENDPOINT}/api/signup/marketcenter`, options)
             .then(response => response.json())
             .then(response => {
-                window.localStorage.setItem('aatoken', response)
+                
+                if(response.error) {
+                    this.setState({
+                        error: response.error
+                    })
+                } else {
+                    
+                    window.localStorage.setItem('aatoken', response)
+                    this.props.history.push('/main')
+                
+                }
+
+                
             })
 
-        this.props.history.push('/main')
+        
     }
 
     render() {
+        
+        const displayError = (!this.state.error)
+        ? ''
+        : <p className='errorDiv'>{this.state.error}</p>
+        
         return (
             <div className='signupBody'>
         <img src={landingLogo} alt='Agent Attendance Logo'/>    
@@ -78,6 +96,7 @@ class SignUp extends React.Component {
                     <p><input type='text' id='mcname' name='mcname' className='signupControl'  onChange={e => this.updateInput(e.target.name, e.target.value)} required /></p>
                     <p><label htmlFor='kwid' className='signupLabel'>Market Center ID</label></p>
                     <p><input type='text' id='kwid' name='kwid' className='signupControl'  onChange={e => this.updateInput(e.target.name, e.target.value)} required /></p>
+                    {displayError}
                     <p><button type='submit' className='signupLoginButton' disabled={!(this.state.firstname && this.state.lastname && this.state.username && this.state.password && this.state.mcname && this.state.kwid)} >Submit</button></p>
                 </form>
 

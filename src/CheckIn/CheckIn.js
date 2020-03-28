@@ -11,7 +11,9 @@ class CheckIn extends React.Component {
 
         this.state = {
             username: '',
-            password: ''
+            password: '',
+            notification: '',
+            classname: ''
         }
     }
 
@@ -46,16 +48,51 @@ class CheckIn extends React.Component {
         fetch(`${config.REACT_APP_API_ENDPOINT}/api/checkin`, options)
             .then(response => response.json())
             .then(response => {
-                this.setState({
-                    username: '',
-                    password: ''
-                })
+
+                console.log(response)
+                
+                if (response.notification.length) {
+                    this.setState({
+                        notification: response.notification,
+                        username: '',
+                        password: ''
+                    })
+                } else {
+                
+                    this.setState({
+                        username: '',
+                        password: '',
+                        notification: 'User Successfully Checked In'
+                    })
+                }
             })
             .catch(response => console.log(response))
             
     }
     
+    componentDidMount() {
+        
+        const token = localStorage.getItem('aatoken')
+        
+        if (!token) {
+            this.props.history.push('/login')
+        }
+        
+        fetch(`${config.REACT_APP_API_ENDPOINT}/api/mc/class?classid=${this.props.match.params.id}`)
+            .then(response => response.json())
+            .then(response => {
+                this.setState({
+                    classname: response[0].classname
+                })
+            })
+    }
+    
     render() {
+        
+        const notification = this.state.notification
+            ? <div className='notification'>{this.state.notification}</div>
+            : ''
+        
         return (
             <div className='checkinBody'>
                 <div className='checkinWrapper'>
@@ -63,7 +100,8 @@ class CheckIn extends React.Component {
                         <div className='checkinForm'>
                             <form className='checkinForm' onSubmit={e => this.onSubmit(e)}>
                                 <span className='checkingInto'>You Are Checking Into</span>
-                                <span className='theClassName'>Orientation 101</span>
+                                <span className='theClassName'>{this.state.classname}</span>
+                                {notification}
                                 <div>
                                     <label htmlFor='username' className='checkinLabel'>Username</label>
                                     <input type='text' id='username' name='username' className='checkinControl' value={this.state.username} onChange={e => this.updateInput(e.target.name, e.target.value)} />

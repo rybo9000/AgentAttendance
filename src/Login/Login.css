@@ -101,3 +101,14 @@
 .loginButton:disabled {
     opacity: .2;
 }
+
+.errorDiv {
+    text-align: center;
+    background-color: red;
+    padding: 5px;
+    color: white;
+    margin: 5px;
+    border-radius: 3px;
+    font-size: 1rem;
+    flex: 0
+}

@@ -29,27 +29,37 @@ class Users extends React.Component {
             username: '',
             password:'',
             email: '',
-            users: users
+            users: users,
+            error: null
         }
     }
 
     componentDidMount() {
         
         const token = localStorage.getItem('aatoken')
-        const decodedJWT = JWT.verify(token, config.REACT_APP_JWT_SECRET)
         
-        const options = {
-            headers: {
-                "mcid": decodedJWT.mcid
+        if (!token) {
+            this.props.history.push('/login')
+        } else {
+
+            const decodedJWT = JWT.verify(token, config.REACT_APP_JWT_SECRET)
+        
+            const options = {
+                headers: {
+                    "mcid": decodedJWT.mcid
+                }
             }
+            
+            // FETCH CLASSES AND SET STATE
+            fetch(`${config.REACT_APP_API_ENDPOINT}/api/mc/users`, options)
+                .then(response => response.json())
+                .then(users => this.setState({
+                    users
+                }))
+
         }
         
-        // FETCH CLASSES AND SET STATE
-        fetch(`${config.REACT_APP_API_ENDPOINT}/api/mc/users`, options)
-            .then(response => response.json())
-            .then(users => this.setState({
-                users
-            }))
+
 
     }
     
@@ -76,18 +86,31 @@ class Users extends React.Component {
         fetch(`${config.REACT_APP_API_ENDPOINT}/api/mc/users`, options)
         .then (response => response.json())
         .then (response => {
-            this.setState({
-                firstname: '',
-                lastname: '',
-                username: '',
-                password:'',
-                email: '',
-                users: [{
-                    firstname: response[0].firstname, 
-                    lastname: response[0].lastname, 
-                    id: response[0].id
-                },...this.state.users]
-            })
+            
+            if (response.error) {
+                this.setState({
+                    error: response.error
+                })
+
+            } else {
+
+                this.setState({
+                    firstname: '',
+                    lastname: '',
+                    username: '',
+                    password:'',
+                    email: '',
+                    users: [{
+                        firstname: response[0].firstname, 
+                        lastname: response[0].lastname, 
+                        id: response[0].id
+                    },...this.state.users],
+                    error: null
+                })
+
+            }
+
+
         })
 
 
@@ -104,15 +127,13 @@ class Users extends React.Component {
     
     render() {
 
-
-
         return (
             <>
                 <Header />
                 <main className='full siteContent'>
                     <div className='container'>
                         <EditUsers users={this.state.users} />
-                        <AddUser firstname={this.state.firstname} lastname={this.state.lastname} username={this.state.username} password={this.state.password} email={this.state.email} handleSubmit = {this.handleSubmit} updateInput={this.updateInput} />
+                        <AddUser firstname={this.state.firstname} error={this.state.error} lastname={this.state.lastname} username={this.state.username} password={this.state.password} email={this.state.email} handleSubmit = {this.handleSubmit} updateInput={this.updateInput} />
                     </div>
                 </main>
                 <Footer />

@@ -15,8 +15,10 @@ class ByClassReport extends React.Component {
         
         return (
             <table className='reportTable'>
-                    <th>Name</th><th>Status</th><th>Date</th>
-                    {rows}
+                    <thead><tr><th>Name</th><th>Status</th><th>Date</th></tr></thead>
+                    <tbody>
+                        {rows}
+                    </tbody>
                     
             </table>
         )

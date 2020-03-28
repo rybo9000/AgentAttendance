@@ -57,9 +57,21 @@ main {
     flex: 1;
 }
 
+.errorDiv {
+    text-align: center;
+    background-color: red;
+    padding: 5px;
+    color: white;
+    margin: 5px;
+    border-radius: 3px;
+    font-size: 1rem;
+    flex: 0 0 100%;
+   
+}
+
 .full {
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: column wrap;
     width: 100%;
 }
 
@@ -70,6 +82,7 @@ main {
     padding: 5px;
     margin: 0 1%;
     justify-content: flex-start;
+    flex-basis: 500px;
 }
 
 .halfTop {

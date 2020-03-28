@@ -19,7 +19,7 @@ function EditUsers(props) {
             return (
                 <section className='half'>
                     <div className='halfTop darkBackground twoRem'>
-                        Edit Users
+                        Active Users
                     </div>
                     {users}
                     <div className='halfBottom darkBackground'></div>

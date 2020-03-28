@@ -1,14 +1,34 @@
 import React from 'react';
+import JWT from 'jsonwebtoken';
 
 import Header from '../Header/Header';
 import TakeAttendance from '../TakeAttendance/TakeAttendance';
 import MCStats from '../MCStats/MCStats';
 import Footer from '../Footer/Footer';
 
+import config from '../config/config';
 import '../config/style.css';
 import './Main.css';
 
 class Main extends React.Component {
+    
+    constructor(props) {
+        super(props)
+        
+        const token = localStorage.getItem('aatoken')
+
+        if (!token) {
+            this.props.history.push('/login')
+        }
+
+
+    }
+    
+    componentDidMount() {
+    
+    
+        
+    }
     
     render() {
         return (
