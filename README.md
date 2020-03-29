@@ -2,7 +2,9 @@
 
 ## An application which allows administrators / instructors to take attendance for classes and meetings
 
-[LIVE DEMO](https://agent-attendance.rybo9000.now.sh/) | [BACK-END GITHUB LINK](https://github.com/rybo9000/AgentAttendance-Server)
+[LIVE DEMO](https://agent-attendance.rybo9000.now.sh/) (u: demo | p: 1234 | mc: demo)
+
+[BACK-END GITHUB LINK](https://github.com/rybo9000/AgentAttendance-Server)
 
 ### What technology is this built with?
 
