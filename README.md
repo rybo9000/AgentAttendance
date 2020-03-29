@@ -22,8 +22,17 @@
 ### Screenshots
 
 ![Agent Attendance Landing Page](https://github.com/rybo9000/repo-content/blob/master/AA_1.PNG?raw=true)
+
+***
+
 ![Agent Attendance Home Page](https://github.com/rybo9000/repo-content/blob/master/AA_2.PNG?raw=true)
+
+***
+
 ![Agent Attendance Edit Users](https://github.com/rybo9000/repo-content/blob/master/AA_3.PNG?raw=true)
+
+***
+
 ![Agent Attendance Check-In](https://github.com/rybo9000/repo-content/blob/master/AA_4.PNG?raw=true)
 
 
