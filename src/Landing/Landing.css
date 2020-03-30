@@ -1,32 +1,32 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab|Bebas+Neue&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab|Bebas+Neue&display=swap");
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth;
-  }
+  scroll-behavior: smooth;
+}
 
 .landingContainer {
-    display: flex;
-    flex-flow: row nowrap;
-    width: 100%;
-    max-width: 1200px;
-    margin: auto;
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .landingFull {
-    display: flex;
-    flex-flow: column nowrap;
-    width: 100%;
-    margin: auto;
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+  margin: auto;
 }
 
 .landingRedBackground {
-    background-color: #B40101;
+  background-color: #b40101;
 }
 
 .landingDarkBackground {
-    background-color: #333333;
+  background-color: #333333;
 }

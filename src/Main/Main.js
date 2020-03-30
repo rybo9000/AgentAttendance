@@ -1,49 +1,42 @@
-import React from 'react';
-import JWT from 'jsonwebtoken';
+import React from "react";
+import JWT from "jsonwebtoken";
 
-import Header from '../Header/Header';
-import TakeAttendance from '../TakeAttendance/TakeAttendance';
-import MCStats from '../MCStats/MCStats';
-import Footer from '../Footer/Footer';
+import Header from "../Header/Header";
+import TakeAttendance from "../TakeAttendance/TakeAttendance";
+import MCStats from "../MCStats/MCStats";
+import Footer from "../Footer/Footer";
 
-import config from '../config/config';
-import '../config/style.css';
-import './Main.css';
+import config from "../config/config";
+import "../config/style.css";
+import "./Main.css";
 
 class Main extends React.Component {
-    
-    constructor(props) {
-        super(props)
-        
-        const token = localStorage.getItem('aatoken')
+  constructor(props) {
+    super(props);
 
-        if (!token) {
-            this.props.history.push('/login')
-        }
+    const token = localStorage.getItem("aatoken");
 
+    if (!token) {
+      this.props.history.push("/login");
+    }
+  }
 
-    }
-    
-    componentDidMount() {
-    
-    
-        
-    }
-    
-    render() {
-        return (
-            <>
-                <Header />
-                <main className='full siteContent'>
-                    <div className='container'>
-                        <TakeAttendance />
-                        <MCStats />
-                    </div>
-                </main>
-                <Footer />
-            </>
-        )
-    }
+  componentDidMount() {}
+
+  render() {
+    return (
+      <>
+        <Header />
+        <main className="full siteContent">
+          <div className="container">
+            <TakeAttendance />
+            <MCStats />
+          </div>
+        </main>
+        <Footer />
+      </>
+    );
+  }
 }
 
 export default Main;

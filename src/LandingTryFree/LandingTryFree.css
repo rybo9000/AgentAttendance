@@ -1,94 +1,83 @@
 .tryFreeContainer {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 40px 0px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 40px 0px;
 }
 
 .tryFreeBig {
-    font-size: 6rem;
-    color: #B40101;
-    font-family: 'Bebas Neue', cursive;
+  font-size: 6rem;
+  color: #b40101;
+  font-family: "Bebas Neue", cursive;
 }
 
 .tryFreeSmall {
-    font-size: 2rem;
-    color: #B40101;
-    font-family: 'Bebas Neue', cursive;
+  font-size: 2rem;
+  color: #b40101;
+  font-family: "Bebas Neue", cursive;
 }
 
 .tryFreeButton {
-    background-color: #B40101;
+  background-color: #b40101;
+  border: none;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 3rem;
+  font-family: "Roboto", sans-serif;
+  margin: 30px;
+}
+
+@media screen and (max-width: 950px) {
+}
+
+@media screen and (max-width: 850px) {
+  .tryFreeContainer {
+    padding: 30px 0px;
+  }
+
+  .tryFreeBig {
+    font-size: 5rem;
+  }
+
+  .tryFreeSmall {
+    font-size: 2rem;
+  }
+
+  .tryFreeButton {
+    background-color: #b40101;
     border: none;
     color: white;
-    padding: 15px;
+    padding: 10px;
     border-radius: 5px;
-    font-size: 3rem;
-    font-family: 'Roboto', sans-serif;
-    margin: 30px;
+    font-size: 2.75rem;
+    font-family: "Roboto", sans-serif;
+    margin: 20px;
+  }
 }
 
-@media screen and (max-width:950px) {
+@media screen and (max-width: 700px) {
+  .tryFreeContainer {
+    padding: 20px 0px;
+  }
 
+  .tryFreeBig {
+    font-size: 4rem;
+  }
 
-}
+  .tryFreeSmall {
+    font-size: 1.75rem;
+  }
 
-@media screen and (max-width:850px) {
-
-    .tryFreeContainer {
-
-        padding: 30px 0px;
-    }
-    
-    .tryFreeBig {
-        font-size: 5rem;
-
-    }
-    
-    .tryFreeSmall {
-        font-size: 2rem;
-
-    }
-    
-    .tryFreeButton {
-        background-color: #B40101;
-        border: none;
-        color: white;
-        padding: 10px;
-        border-radius: 5px;
-        font-size: 2.75rem;
-        font-family: 'Roboto', sans-serif;
-        margin: 20px;
-    }
-
-}
-
-@media screen and (max-width:700px) {
-    
-    .tryFreeContainer {
-
-        padding: 20px 0px;
-    }
-    
-    .tryFreeBig {
-        font-size: 4rem;
-
-    }
-    
-    .tryFreeSmall {
-        font-size: 1.75rem;
-
-    }
-    
-    .tryFreeButton {
-        background-color: #B40101;
-        border: none;
-        color: white;
-        padding: 10px;
-        border-radius: 5px;
-        font-size: 2.75rem;
-        font-family: 'Roboto', sans-serif;
-        margin: 20px 0 0 0;
-    }
+  .tryFreeButton {
+    background-color: #b40101;
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 2.75rem;
+    font-family: "Roboto", sans-serif;
+    margin: 20px 0 0 0;
+  }
 }

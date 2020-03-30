@@ -1,20 +1,20 @@
 .reportOptionsSelector {
-    display: flex;
-    flex-flow: column-nowrap;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding: 10px;
-    font-family: 'Roboto Condensed', sans-serif;
-    font-size: 1.25rem;
-    padding: 10px;
+  display: flex;
+  flex-flow: column-nowrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 10px;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 1.25rem;
+  padding: 10px;
 }
 
 .reportOptionsSelector label {
-    display: block;
-    margin-bottom: 10px;
+  display: block;
+  margin-bottom: 10px;
 }
 
 .reportOptionsSelector select {
-    border-radius: 3px;
-    padding: 5px;
+  border-radius: 3px;
+  padding: 5px;
 }

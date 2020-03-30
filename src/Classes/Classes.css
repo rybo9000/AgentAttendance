@@ -1,167 +1,164 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto|Mandali|Roboto+Slab&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto|Mandali|Roboto+Slab&display=swap");
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html, body {
-    min-height: 100vh;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: flex-start;
-
+html,
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
 }
 
 main {
-    padding-top: 30px;
+  padding-top: 30px;
 }
 
 .darkBackground {
-    background-color: #333333;
+  background-color: #333333;
 }
 
 .redBackground {
-    background-color: #990000;
+  background-color: #990000;
 }
 
 .lightGrayBackground {
-    background-color: lightgray;
+  background-color: lightgray;
 }
 
 .whiteBackground {
-    background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 
 .siteContent {
-    display: flex;
-    flex: 1;
-    flex-flow: column nowrap;
-    justify-content: flex-start;
-    align-items: flex-start;
-    background-color: #F1F1F1;
+  display: flex;
+  flex: 1;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: #f1f1f1;
 }
 
 .container {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: flex-start;
-    width: 100%;
-    max-width: 1200px;
-    margin: auto;
-    flex: 1;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  flex: 1;
 }
 
 .full {
-    display: flex;
-    flex-flow: column nowrap;
-    width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
 }
 
 .half {
-    display: flex;
-    flex-flow: column nowrap;
-    flex: 1;
-    padding: 5px;
-    margin: 0 1%;
-    justify-content: flex-start;
+  display: flex;
+  flex-flow: column nowrap;
+  flex: 1;
+  padding: 5px;
+  margin: 0 1%;
+  justify-content: flex-start;
 }
 
 .halfTop {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    color: #FFFFFF;
-    border-radius: 7px 7px 0 0;
-    font-family: 'Roboto Slab', serif;
-    padding: 5px;
-    font-size: 2.25rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: #ffffff;
+  border-radius: 7px 7px 0 0;
+  font-family: "Roboto Slab", serif;
+  padding: 5px;
+  font-size: 2.25rem;
 }
 
 .halfBottom {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    color: #FFFFFF;
-    border-radius: 0 0 7px 7px;
-    font-size: 2.5rem;
-    min-height: 20px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: #ffffff;
+  border-radius: 0 0 7px 7px;
+  font-size: 2.5rem;
+  min-height: 20px;
 }
 
 .halfBody {
-    
-    padding: 20px;
-    background-color: white;
-    border: 1px solid lightgray;
-    
+  padding: 20px;
+  background-color: white;
+  border: 1px solid lightgray;
 }
 
 .halfFormLabel {
-    font-family: 'Roboto Condensed', sans-serif;
-    display: block;
-    font-size: 1.25rem;
-    margin-bottom: 5px;
+  font-family: "Roboto Condensed", sans-serif;
+  display: block;
+  font-size: 1.25rem;
+  margin-bottom: 5px;
 }
 
 .halfFormInput {
-    width: 100%;
-    padding: 5px;
-    margin-bottom: 20px;
-    border-radius: 3px;
-    display: block;
-    padding: 10px;
-    border: 1px solid #F0F0F0;
-    background-color: #F8F8F8;
-    font-size: 1.25rem;
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 20px;
+  border-radius: 3px;
+  display: block;
+  padding: 10px;
+  border: 1px solid #f0f0f0;
+  background-color: #f8f8f8;
+  font-size: 1.25rem;
 }
 
 .halfFormInput:hover {
-    border: 1px solid #D0D0D0;
-    background-color: #F5F5F5;
-
+  border: 1px solid #d0d0d0;
+  background-color: #f5f5f5;
 }
 
 .halfFormInput:active {
-    border: 1px solid #D0D0D0;
-    background-color: #F5F5F5;
+  border: 1px solid #d0d0d0;
+  background-color: #f5f5f5;
 }
 
 .halfFormButton {
-    border-radius: 3px;
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #B40101;
-    color: white;
-    border: none;
-    margin: 20px 0;
-    font-family: 'Roboto Condensed', sans-serif;
-    font-size: 2rem;
+  border-radius: 3px;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #b40101;
+  color: white;
+  border: none;
+  margin: 20px 0;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 2rem;
 }
 
 .twoRem {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 .onePointFiveRem {
-    font-size: 1.6rem;
+  font-size: 1.6rem;
 }
 
 .thing {
-    display: flex;
-    flex-flow: row nowrap;
-    font-size: 1.75rem;
-    padding: 10px;
-    font-family: 'Mandali', sans-serif;
+  display: flex;
+  flex-flow: row nowrap;
+  font-size: 1.75rem;
+  padding: 10px;
+  font-family: "Mandali", sans-serif;
 }
 
 .thing img {
-    margin-left: 15px;
+  margin-left: 15px;
 }
 
 .thingName {
-    flex: 1;
+  flex: 1;
 }

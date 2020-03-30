@@ -1,62 +1,54 @@
 .goingToLoveBackground {
-    background-color: #F8F8F8;
-    
+  background-color: #f8f8f8;
 }
 
 #goingToLoveContainer {
-
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 10px 30px 10px;
-    font-family: 'Roboto', sans-serif;
-    text-align: center;
-    color: #333333;
-    font-size: 1rem;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 10px 30px 10px;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  color: #333333;
+  font-size: 1rem;
 }
 
 .goingToLoveHeader {
-    font-family: 'Roboto Slab', serif;
-    font-size: 2.5rem;
-    font-weight: normal;
+  font-family: "Roboto Slab", serif;
+  font-size: 2.5rem;
+  font-weight: normal;
 }
 
-@media screen and (max-width:950px) {
+@media screen and (max-width: 950px) {
+  .goingToLoveContainer {
+    font-size: 1rem;
+    padding: 10px 10px 30px 10px;
+  }
 
-    .goingToLoveContainer {
-        font-size: 1rem;
-        padding: 10px 10px 30px 10px;
-    }
-    
-    .goingToLoveHeader {
-        font-size: 2rem;
-    }
+  .goingToLoveHeader {
+    font-size: 2rem;
+  }
 }
 
-@media screen and (max-width:850px) {
+@media screen and (max-width: 850px) {
+  .goingToLoveContainer {
+    font-size: 0.75rem;
+    padding: 5px 5px 20px 5px;
+  }
 
-    .goingToLoveContainer {
-        font-size: .75rem;
-        padding: 5px 5px 20px 5px;
-    }
-    
-    .goingToLoveHeader {
-        font-size: 1.75rem;
-    }
-
+  .goingToLoveHeader {
+    font-size: 1.75rem;
+  }
 }
 
-@media screen and (max-width:700px) {
-    
-    .goingToLoveContainer {
-        font-size: .5rem;
-        padding: 5px 5px 20px 5px;
-    }
-    
-    .goingToLoveHeader {
-        font-size: 1.25rem;
-    }
+@media screen and (max-width: 700px) {
+  .goingToLoveContainer {
+    font-size: 0.5rem;
+    padding: 5px 5px 20px 5px;
+  }
 
+  .goingToLoveHeader {
+    font-size: 1.25rem;
+  }
 }
-

@@ -1,51 +1,48 @@
 .landingNav {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-end;
-    align-items: flex-end;
-    font-family: 'Roboto', sans-serif;
-    font-size: 1rem;
-    color:#333333;
-    font-weight: bold;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  align-items: flex-end;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  color: #333333;
+  font-weight: bold;
 }
 
 .landingNav ul {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 .landingNav ul li {
-    margin: 0 10px;
+  margin: 0 10px;
 }
 
 .landingNav a {
-    color: #333333;
-    text-decoration: none;
+  color: #333333;
+  text-decoration: none;
 }
 
 .landingNav a:visited {
-    color: #333333;
+  color: #333333;
 }
 
 .landingNav a:hover {
-    color: #555555;
+  color: #555555;
 }
 
-@media screen and (max-width:950px) {
-
+@media screen and (max-width: 950px) {
 }
 
-@media screen and (max-width:850px) {
-
-    .landingNav {
-        display: none;
-    }
+@media screen and (max-width: 850px) {
+  .landingNav {
+    display: none;
+  }
 }
 
-@media screen and (max-width:700px) {
-
+@media screen and (max-width: 700px) {
 }

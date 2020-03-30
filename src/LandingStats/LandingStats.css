@@ -1,29 +1,29 @@
 .landingStatsContainer {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
-    padding: 40px 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
 }
 
 .statContainer {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    text-align: center;
-    color: white;
-    font-family: 'Roboto', sans-serif;
-    padding: 10px 20px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  padding: 10px 20px;
 }
 
 .statBig {
-    font-size: 2rem;
-    display: block;
-    font-weight: bold;
+  font-size: 2rem;
+  display: block;
+  font-weight: bold;
 }
 
 .statText {
-    font-size: 1rem;
-    display: block;
+  font-size: 1rem;
+  display: block;
 }
