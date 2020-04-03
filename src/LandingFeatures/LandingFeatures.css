@@ -40,6 +40,7 @@
   font-size: 1.5rem;
   padding: 15px;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .perMonth {
@@ -52,7 +53,55 @@
 }
 
 @media screen and (max-width: 850px) {
+  .featuresRow {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .featuresULContainer {
+    flex-basis: 31%;
+    margin: 10px;
+    padding: 10px;
+    font-family: "Roboto Slab", serif;
+    font-size: 1.3rem;
+  }
+
+  .featuresULContainer ul {
+    line-height: 2rem;
+    text-align: center;
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+  }
 }
 
 @media screen and (max-width: 700px) {
+}
+
+@media screen and (max-width: 600px) {
+}
+
+@media screen and (max-width: 500px) {
+}
+
+@media screen and (max-width: 400px) {
+  .featuresPrice {
+    font-size: 2rem;
+    padding: 0 5px;
+  }
+
+  .featuresULContainer {
+    font-size: 1.1rem;
+  }
+
+  .featuresULContainer ul {
+    line-height: 2rem;
+  }
+
+  .featuresButton {
+    font-size: 1.25rem;
+    padding: 15px;
+  }
 }

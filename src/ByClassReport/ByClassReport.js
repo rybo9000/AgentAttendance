@@ -1,4 +1,5 @@
 import React from "react";
+import moment from "moment";
 
 import "../config/style.css";
 import "./ByClassReport.css";
@@ -10,7 +11,7 @@ class ByClassReport extends React.Component {
         <tr key={index}>
           <td>{row.firstname + " " + row.lastname}</td>
           <td>COMPLETED</td>
-          <td>{row.completed}</td>
+          <td>{moment.utc(row.completed).format("MM-DD-YYYY")}</td>
         </tr>
       </>
     ));

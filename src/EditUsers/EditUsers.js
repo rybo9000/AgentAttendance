@@ -21,7 +21,7 @@ function EditUsers(props) {
   });
 
   return (
-    <section className="half">
+    <section className="half" id="editUsers">
       <div className="halfTop darkBackground twoRem">Active Users</div>
       {users}
       <div className="halfBottom darkBackground"></div>

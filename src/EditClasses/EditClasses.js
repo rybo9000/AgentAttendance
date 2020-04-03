@@ -25,7 +25,7 @@ class EditClasses extends React.Component {
     });
 
     return (
-      <section className="half">
+      <section className="half" id="editClasses">
         <div className="halfTop darkBackground twoRem">Current Classes</div>
         {classes}
         <div className="halfBottom darkBackground"></div>

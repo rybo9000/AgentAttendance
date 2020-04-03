@@ -16,17 +16,17 @@ class SignUp extends React.Component {
       password: "",
       mcname: "",
       kwid: "",
-      error: null
+      error: null,
     };
   }
 
   updateInput = (name, value) => {
     this.setState({
-      [name]: value
+      [name]: value,
     });
   };
 
-  onSubmit = e => {
+  onSubmit = (e) => {
     e.preventDefault();
 
     const {
@@ -36,7 +36,7 @@ class SignUp extends React.Component {
       password,
       mcname,
       kwid,
-      email
+      email,
     } = this.state;
 
     const signupData = {
@@ -46,23 +46,23 @@ class SignUp extends React.Component {
       password,
       mcname,
       kwid,
-      email
+      email,
     };
 
     const options = {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(signupData)
+      body: JSON.stringify(signupData),
     };
 
     fetch(`${config.REACT_APP_API_ENDPOINT}/api/signup/marketcenter`, options)
-      .then(response => response.json())
-      .then(response => {
+      .then((response) => response.json())
+      .then((response) => {
         if (response.error) {
           this.setState({
-            error: response.error
+            error: response.error,
           });
         } else {
           window.localStorage.setItem("aatoken", response);
@@ -80,9 +80,13 @@ class SignUp extends React.Component {
 
     return (
       <div className="signupBody">
-        <img src={landingLogo} alt="Agent Attendance Logo" />
+        <img
+          src={landingLogo}
+          alt="Agent Attendance Logo"
+          className="signUpLogo"
+        />
         <div className="signupContainer">
-          <form className="signupForm" onSubmit={e => this.onSubmit(e)}>
+          <form className="signupForm" onSubmit={(e) => this.onSubmit(e)}>
             <p>
               <label htmlFor="firstname" className="signupLabel">
                 First Name
@@ -94,7 +98,9 @@ class SignUp extends React.Component {
                 id="firstname"
                 name="firstname"
                 className="signupControl"
-                onChange={e => this.updateInput(e.target.name, e.target.value)}
+                onChange={(e) =>
+                  this.updateInput(e.target.name, e.target.value)
+                }
                 required
               />
             </p>
@@ -109,7 +115,9 @@ class SignUp extends React.Component {
                 id="lastname"
                 name="lastname"
                 className="signupControl"
-                onChange={e => this.updateInput(e.target.name, e.target.value)}
+                onChange={(e) =>
+                  this.updateInput(e.target.name, e.target.value)
+                }
                 required
               />
             </p>
@@ -124,7 +132,9 @@ class SignUp extends React.Component {
                 id="username"
                 name="username"
                 className="signupControl"
-                onChange={e => this.updateInput(e.target.name, e.target.value)}
+                onChange={(e) =>
+                  this.updateInput(e.target.name, e.target.value)
+                }
                 required
               />
             </p>
@@ -139,7 +149,9 @@ class SignUp extends React.Component {
                 id="password"
                 name="password"
                 className="signupControl"
-                onChange={e => this.updateInput(e.target.name, e.target.value)}
+                onChange={(e) =>
+                  this.updateInput(e.target.name, e.target.value)
+                }
                 required
               />
             </p>
@@ -154,7 +166,9 @@ class SignUp extends React.Component {
                 id="email"
                 name="email"
                 className="signupControl"
-                onChange={e => this.updateInput(e.target.name, e.target.value)}
+                onChange={(e) =>
+                  this.updateInput(e.target.name, e.target.value)
+                }
                 required
               />
             </p>
@@ -169,7 +183,9 @@ class SignUp extends React.Component {
                 id="mcname"
                 name="mcname"
                 className="signupControl"
-                onChange={e => this.updateInput(e.target.name, e.target.value)}
+                onChange={(e) =>
+                  this.updateInput(e.target.name, e.target.value)
+                }
                 required
               />
             </p>
@@ -184,7 +200,9 @@ class SignUp extends React.Component {
                 id="kwid"
                 name="kwid"
                 className="signupControl"
-                onChange={e => this.updateInput(e.target.name, e.target.value)}
+                onChange={(e) =>
+                  this.updateInput(e.target.name, e.target.value)
+                }
                 required
               />
             </p>

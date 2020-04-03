@@ -5,10 +5,10 @@ import "./AddClass.css";
 
 function AddClass(props) {
   return (
-    <section className="half">
+    <section className="half" id="addClass">
       <div className="halfTop redBackground">Add A Class</div>
       <div className="halfBody">
-        <form className="halfForm" onSubmit={e => props.handleSubmit(e)}>
+        <form className="halfForm" onSubmit={(e) => props.handleSubmit(e)}>
           <label htmlFor="classInput" className="halfFormLabel">
             Class Name
           </label>
@@ -17,7 +17,7 @@ function AddClass(props) {
             className="halfFormInput"
             id="classInput"
             name="classInput"
-            onChange={e => props.updateInput(e.target.name, e.target.value)}
+            onChange={(e) => props.updateInput(e.target.name, e.target.value)}
             value={props.classInput}
           />
           <button

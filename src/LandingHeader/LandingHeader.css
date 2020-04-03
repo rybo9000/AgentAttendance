@@ -7,21 +7,6 @@
   padding: 25px 30px;
 }
 
-.landingHamburger {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  display: none;
-}
-
-.landingHamburger img {
-  max-width: 100%;
-  height: auto;
-}
-
 @media screen and (max-width: 950px) {
   .landingHeader img {
     width: 350px;
@@ -38,10 +23,6 @@
     display: none;
   }
 
-  .landingHamburger {
-    display: inline-flex;
-  }
-
   .landingHeader {
     padding: 15px 25px;
   }
@@ -50,11 +31,33 @@
     font-size: 2rem;
     height: 300px;
   }
+
+  .landing_bm-burger-button {
+    display: inline-flex;
+  }
 }
 
 @media screen and (max-width: 700px) {
   .heroBanner {
     font-size: 1.5rem;
     height: 300px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .landingHeader img {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .landingHeader img {
+    width: 250px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .landingHeader img {
+    width: 200px;
   }
 }

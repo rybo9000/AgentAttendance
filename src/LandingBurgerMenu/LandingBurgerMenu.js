@@ -17,20 +17,17 @@ class LandingBurgerMenu extends React.Component {
         crossButtonClassName={"landing_bm-cross-button"}
         crossClassName={"landing_bm-cross"}
       >
-        <Link id="home" className="menu-item" to="/main">
-          Home
+        <Link id="landingSignup" className="menu-item" to="/signup">
+          Sign Up
         </Link>
-        <Link id="users" className="menu-item" to="/users">
-          Users
-        </Link>
-        <Link id="classes" className="menu-item" to="/classes">
+        <a id="landingAbout" className="menu-item" href="#about">
+          About
+        </a>
+        <a id="landingFeatures" className="menu-item" href="#features">
           Classes
-        </Link>
-        <Link id="reports" className="menu-item" to="/reports">
-          Reports
-        </Link>
-        <Link id="Logout" className="menu-item" to="/login">
-          Logout
+        </a>
+        <Link id="landingLogin" className="menu-item" to="/login">
+          Login
         </Link>
       </Menu>
     );

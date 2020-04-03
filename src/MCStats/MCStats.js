@@ -13,14 +13,14 @@ class MCStats extends React.Component {
       mcName: "KW Southwest",
       classes: 47,
       checkIns: 3387,
-      agents: 985
+      agents: 985,
     };
 
     this.state = {
       mcName: stats.mcName,
       classes: stats.classes,
       checkIns: stats.checkIns,
-      agents: stats.agents
+      agents: stats.agents,
     };
   }
 
@@ -32,18 +32,18 @@ class MCStats extends React.Component {
 
       const options = {
         headers: {
-          mcid: decodedJWT.mcid
-        }
+          mcid: decodedJWT.mcid,
+        },
       };
 
       // CONVERT ALL OF THESE TO PROMISE.ALL OR SQL JOIN
 
       // GET MCNAME
       fetch(`${config.REACT_APP_API_ENDPOINT}/api/mc/stats/getname`, options)
-        .then(response => response.json())
-        .then(response => {
+        .then((response) => response.json())
+        .then((response) => {
           this.setState({
-            mcName: response[0].mcname
+            mcName: response[0].mcname,
           });
         });
 
@@ -52,10 +52,10 @@ class MCStats extends React.Component {
         `${config.REACT_APP_API_ENDPOINT}/api/mc/stats/totalclasses`,
         options
       )
-        .then(response => response.json())
-        .then(response => {
+        .then((response) => response.json())
+        .then((response) => {
           this.setState({
-            classes: response[0].count
+            classes: response[0].count,
           });
         });
 
@@ -64,10 +64,10 @@ class MCStats extends React.Component {
         `${config.REACT_APP_API_ENDPOINT}/api/mc/stats/totalcheckins`,
         options
       )
-        .then(response => response.json())
-        .then(response => {
+        .then((response) => response.json())
+        .then((response) => {
           this.setState({
-            checkIns: response[0].count
+            checkIns: response[0].count,
           });
         });
 
@@ -76,10 +76,10 @@ class MCStats extends React.Component {
         `${config.REACT_APP_API_ENDPOINT}/api/mc/stats/totalagents`,
         options
       )
-        .then(response => response.json())
-        .then(response => {
+        .then((response) => response.json())
+        .then((response) => {
           this.setState({
-            agents: response[0].count
+            agents: response[0].count,
           });
         });
     }
@@ -87,7 +87,7 @@ class MCStats extends React.Component {
 
   render() {
     return (
-      <section className="half">
+      <section className="half" id="mcStat">
         <div className="halfTop redBackground onePointFiveRem">
           {this.state.mcName}
         </div>

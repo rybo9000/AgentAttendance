@@ -7,7 +7,7 @@ function LandingFooter() {
   return (
     <footer className="landingFull landingDarkBackground landingFooter">
       <div className="landingContainer">
-        <div className="landingFooterDiv landingFooterPadding">
+        <div className="landingFooterDiv landingFooterPadding landingFooterInfo">
           <span className="landingFooterTopHeader">FEATURES</span>
           <ul>
             <li>Track Attendance For Classes</li>
@@ -17,7 +17,7 @@ function LandingFooter() {
             <li>Monetize With Ads</li>
           </ul>
         </div>
-        <div className="landingFooterDiv landingFooterPadding">
+        <div className="landingFooterDiv landingFooterPadding landingFooterInfo">
           <span className="landingFooterTopHeader">BENEFITS</span>
           <ul>
             <li>Save Time In Classes</li>
@@ -26,7 +26,10 @@ function LandingFooter() {
             <li>Automatic Follow Up Emails</li>
           </ul>
         </div>
-        <div className="landingFooterDiv landingFooterPadding">
+        <div
+          className="landingFooterDiv landingFooterPadding"
+          id="landingFooterContact"
+        >
           <span className="landingFooterTopHeader">CONTACT</span>
           <ul>
             <li>Agent Attendance</li>

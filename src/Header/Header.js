@@ -2,7 +2,6 @@ import React from "react";
 import BurgerMenu from "../BurgerMenu/BurgerMenu";
 
 import logoSmall from "../img/logoSmall.png";
-import hamburgerWhite from "../img/hamburgerWhite.png";
 import Nav from "../Nav/Nav";
 
 import "../config/style.css";

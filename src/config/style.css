@@ -159,6 +159,7 @@ main {
   margin: 20px 0;
   font-family: "Roboto Condensed", sans-serif;
   font-size: 2rem;
+  cursor: pointer;
 }
 
 .halfFormButton:hover {

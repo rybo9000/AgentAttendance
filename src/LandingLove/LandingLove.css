@@ -43,12 +43,18 @@
 }
 
 @media screen and (max-width: 700px) {
-  .goingToLoveContainer {
-    font-size: 0.5rem;
+  #goingToLoveContainer {
+    font-size: 0.9rem;
     padding: 5px 5px 20px 5px;
   }
 
   .goingToLoveHeader {
     font-size: 1.25rem;
   }
+}
+
+@media screen and (max-width: 600px) {
+}
+
+@media screen and (max-width: 500px) {
 }

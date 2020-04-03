@@ -20,17 +20,17 @@ class Reports extends React.Component {
       reportSelect: null,
       selectedClass: null,
       classList: [],
-      rows: []
+      rows: [],
     };
   }
 
   handleUpdate = (name, value) => {
     this.setState({
-      [name]: value
+      [name]: value,
     });
   };
 
-  fetchRows = selectedClass => {
+  fetchRows = (selectedClass) => {
     if (selectedClass !== "") {
       const token = localStorage.getItem("aatoken");
       const decodedJWT = JWT.verify(token, config.REACT_APP_JWT_SECRET);
@@ -38,15 +38,17 @@ class Reports extends React.Component {
       fetch(
         `${config.REACT_APP_API_ENDPOINT}/api/reports/byclass?&classid=${selectedClass}&mcid=${decodedJWT.mcid}`
       )
-        .then(results => results.json())
-        .then(response =>
+        .then((results) => results.json())
+        .then((response) => {
+          console.log(response);
+
           this.setState({
-            rows: response
-          })
-        );
+            rows: response,
+          });
+        });
     } else {
       this.setState({
-        rows: []
+        rows: [],
       });
     }
   };
@@ -61,16 +63,16 @@ class Reports extends React.Component {
 
       const options = {
         headers: {
-          mcid: decodedJWT.mcid
-        }
+          mcid: decodedJWT.mcid,
+        },
       };
 
       // FETCH CLASSES AND SET STATE
       fetch(`${config.REACT_APP_API_ENDPOINT}/api/mc/classes`, options)
-        .then(response => response.json())
-        .then(classList =>
+        .then((response) => response.json())
+        .then((classList) =>
           this.setState({
-            classList
+            classList,
           })
         )
         .catch({ error: "there was an error" });

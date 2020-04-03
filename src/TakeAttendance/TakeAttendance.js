@@ -16,11 +16,11 @@ class TakeAttendance extends React.Component {
       { name: "Realty 101", id: 2 },
       { name: "Buying & Selling", id: 3 },
       { name: "Close The Deal", id: 4 },
-      { name: "Financing 101", id: 5 }
+      { name: "Financing 101", id: 5 },
     ];
 
     this.state = {
-      classname: mcclasses
+      classname: mcclasses,
     };
   }
 
@@ -32,16 +32,16 @@ class TakeAttendance extends React.Component {
 
       const options = {
         headers: {
-          mcid: decodedJWT.mcid
-        }
+          mcid: decodedJWT.mcid,
+        },
       };
 
       // FETCH CLASSES AND SET STATE
       fetch(`${config.REACT_APP_API_ENDPOINT}/api/mc/classes`, options)
-        .then(response => response.json())
-        .then(classname =>
+        .then((response) => response.json())
+        .then((classname) =>
           this.setState({
-            classname
+            classname,
           })
         );
     }
@@ -66,7 +66,7 @@ class TakeAttendance extends React.Component {
     });
 
     return (
-      <section className="half">
+      <section className="half" id="takeAttendance">
         <div className="halfTop darkBackground twoRem">Take Attendance</div>
         {classes}
         <div className="halfBottom darkBackground"></div>

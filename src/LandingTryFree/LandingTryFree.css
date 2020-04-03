@@ -27,6 +27,7 @@
   font-size: 3rem;
   font-family: "Roboto", sans-serif;
   margin: 30px;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 950px) {
@@ -79,5 +80,58 @@
     font-size: 2.75rem;
     font-family: "Roboto", sans-serif;
     margin: 20px 0 0 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .tryFreeContainer {
+    padding: 20px 0px;
+  }
+
+  .tryFreeBig {
+    font-size: 3rem;
+  }
+
+  .tryFreeSmall {
+    font-size: 1.5rem;
+  }
+
+  .tryFreeButton {
+    background-color: #b40101;
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 2.5rem;
+    font-family: "Roboto", sans-serif;
+    margin: 20px 0 0 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+}
+
+@media screen and (max-width: 400px) {
+  .tryFreeContainer {
+    padding: 20px 0px;
+  }
+
+  .tryFreeBig {
+    font-size: 2.25rem;
+  }
+
+  .tryFreeSmall {
+    font-size: 1.25rem;
+  }
+
+  .tryFreeButton {
+    background-color: #b40101;
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 2rem;
+    font-family: "Roboto", sans-serif;
+    margin: 15px 0 0 0;
   }
 }

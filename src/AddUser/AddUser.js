@@ -11,11 +11,11 @@ function AddUser(props) {
   );
 
   return (
-    <section className="half">
+    <section className="half" id="addUser">
       <div className="halfTop redBackground">Add A User</div>
       <div className="halfBody">
         {errorDiv}
-        <form className="halfForm" onSubmit={e => props.handleSubmit(e)}>
+        <form className="halfForm" onSubmit={(e) => props.handleSubmit(e)}>
           <label htmlFor="firstname" className="halfFormLabel">
             First Name
           </label>
@@ -24,7 +24,7 @@ function AddUser(props) {
             className="halfFormInput"
             id="firstname"
             name="firstname"
-            onChange={e => props.updateInput(e.target.name, e.target.value)}
+            onChange={(e) => props.updateInput(e.target.name, e.target.value)}
             value={props.firstname}
           />
           <label htmlFor="name" className="halfFormLabel">
@@ -35,7 +35,7 @@ function AddUser(props) {
             className="halfFormInput"
             id="lastname"
             name="lastname"
-            onChange={e => props.updateInput(e.target.name, e.target.value)}
+            onChange={(e) => props.updateInput(e.target.name, e.target.value)}
             value={props.lastname}
           />
           <label htmlFor="username" className="halfFormLabel">
@@ -46,7 +46,7 @@ function AddUser(props) {
             className="halfFormInput"
             id="username"
             name="username"
-            onChange={e => props.updateInput(e.target.name, e.target.value)}
+            onChange={(e) => props.updateInput(e.target.name, e.target.value)}
             value={props.username}
           />
           <label htmlFor="password" className="halfFormLabel">
@@ -57,7 +57,7 @@ function AddUser(props) {
             className="halfFormInput"
             id="password"
             name="password"
-            onChange={e => props.updateInput(e.target.name, e.target.value)}
+            onChange={(e) => props.updateInput(e.target.name, e.target.value)}
             value={props.password}
           />
           <label htmlFor="email" className="halfFormLabel">
@@ -68,7 +68,7 @@ function AddUser(props) {
             className="halfFormInput"
             id="email"
             name="email"
-            onChange={e => props.updateInput(e.target.name, e.target.value)}
+            onChange={(e) => props.updateInput(e.target.name, e.target.value)}
             value={props.email}
           />
 

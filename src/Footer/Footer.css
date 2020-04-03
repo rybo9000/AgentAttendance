@@ -87,3 +87,10 @@ footer {
     width: 33%;
   }
 }
+
+@media screen and (max-width: 400px) {
+  .footerDiv {
+    width: 30%;
+    margin: 2px;
+  }
+}

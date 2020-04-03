@@ -1,6 +1,6 @@
 /* Position and sizing of burger button */
 .main_bm-burger-button {
-  position: fixed;
+  position: absolute;
   width: 42px;
   height: 38px;
   right: 36px;
@@ -85,4 +85,40 @@
 /* Styling of overlay */
 .bm-overlay {
   background: rgba(0, 0, 0, 0.3);
+}
+
+@media screen and (max-width: 950px) {
+}
+
+@media screen and (max-width: 850px) {
+}
+
+@media screen and (max-width: 700px) {
+}
+
+@media screen and (max-width: 600px) {
+  .main_bm-burger-button {
+    width: 42px;
+    height: 38px;
+    right: 36px;
+    top: 30px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .main_bm-burger-button {
+    width: 32px;
+    height: 32px;
+    right: 20px;
+    top: 27px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .main_bm-burger-button {
+    width: 28px;
+    height: 28px;
+    right: 20px;
+    top: 22px;
+  }
 }

@@ -75,3 +75,43 @@
   width: 100%;
   padding: 10px 0 10px 30px;
 }
+
+@media screen and (max-width: 950px) {
+}
+
+@media screen and (max-width: 850px) {
+  .landingFooterInfo {
+    display: none;
+  }
+
+  .landingFooterDiv {
+    width: 40%;
+    color: #999999;
+    font-size: 12px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300px;
+    line-height: 1.75rem;
+    margin: 10px 10px 20px 10px;
+  }
+
+  #landingFooterAbout {
+    width: 60%;
+    line-height: 1rem;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  #landingFooterContact {
+    display: none;
+  }
+  #landingFooterAbout {
+    width: 80%;
+    line-height: 1rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+}
+
+@media screen and (max-width: 500px) {
+}

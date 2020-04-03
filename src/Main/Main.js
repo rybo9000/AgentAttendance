@@ -1,12 +1,10 @@
 import React from "react";
-import JWT from "jsonwebtoken";
 
 import Header from "../Header/Header";
 import TakeAttendance from "../TakeAttendance/TakeAttendance";
 import MCStats from "../MCStats/MCStats";
 import Footer from "../Footer/Footer";
 
-import config from "../config/config";
 import "../config/style.css";
 import "./Main.css";
 

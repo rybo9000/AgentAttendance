@@ -80,6 +80,7 @@
   color: white;
   border: none;
   margin: 20px 0;
+  cursor: pointer;
 }
 
 .loginButton:hover {
@@ -115,4 +116,42 @@
   border-radius: 3px;
   font-size: 1rem;
   flex: 0;
+}
+
+@media screen and (max-width: 950px) {
+}
+
+@media screen and (max-width: 850px) {
+}
+
+@media screen and (max-width: 700px) {
+}
+
+@media screen and (max-width: 600px) {
+}
+
+@media screen and (max-width: 500px) {
+}
+
+@media screen and (max-width: 400px) {
+  .loginContainer {
+    padding: 20px 10px;
+    font-size: 1.4rem;
+    width: 100%;
+    border: 1px solid lightgray;
+  }
+
+  .loginLabel {
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .loginControl {
+    border-radius: 3px;
+    display: block;
+    padding: 4px;
+    border: 1px solid #f0f0f0;
+    background-color: #f8f8f8;
+    width: 90%;
+  }
 }
