@@ -4,8 +4,14 @@ import moment from "moment";
 import "../config/style.css";
 import "./ByClassReport.css";
 
+// REPORT BY CLASS
 class ByClassReport extends React.Component {
+  static defaultProps = {
+    rows: [],
+  };
+
   render() {
+    // GENERATE THE TABLE ROWS WITH DATA
     const rows = this.props.rows.map((row, index) => (
       <>
         <tr key={index}>

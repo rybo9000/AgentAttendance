@@ -10,6 +10,7 @@ import LandingFooter from "../LandingFooter/LandingFooter";
 
 import "./Landing.css";
 
+// FIRST PAGE WHEN SOMEONE ACCESSES THE SITE
 class Landing extends React.Component {
   render() {
     return (

@@ -6,6 +6,7 @@ import exclusive from "../img/exclusive.png";
 import "../config/style.css";
 import "./Footer.css";
 
+// FOOTER COMPONENT
 function Footer() {
   return (
     <footer className="full darkBackground footerMargin">

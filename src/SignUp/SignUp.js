@@ -5,6 +5,7 @@ import landingLogo from "../img/landingLogo.png";
 import "./SignUp.css";
 import config from "../config/config.js";
 
+// SIGN UP PAGE FOR NEW CLIENTS
 class SignUp extends React.Component {
   constructor(props) {
     super(props);
@@ -20,6 +21,7 @@ class SignUp extends React.Component {
     };
   }
 
+  // UPDATE STATE WHEN A FORM FIELD IS CHANGED
   updateInput = (name, value) => {
     this.setState({
       [name]: value,
@@ -39,6 +41,7 @@ class SignUp extends React.Component {
       email,
     } = this.state;
 
+    // BUILD NEW OBJECT TO SEND TO FETCH CALL
     const signupData = {
       firstname,
       lastname,
@@ -57,14 +60,17 @@ class SignUp extends React.Component {
       body: JSON.stringify(signupData),
     };
 
+    // POST TO ENDPOINT TO CREATE NEW MC AND ADMIN USER
     fetch(`${config.REACT_APP_API_ENDPOINT}/api/signup/marketcenter`, options)
       .then((response) => response.json())
       .then((response) => {
+        // IF THERES AN ERROR DISPLAY IT VIA STATE
         if (response.error) {
           this.setState({
             error: response.error,
           });
         } else {
+          // IF SUCCESSFUL ASSIGN JWT AND REDIRECT
           window.localStorage.setItem("aatoken", response);
           this.props.history.push("/main");
         }
@@ -72,6 +78,7 @@ class SignUp extends React.Component {
   };
 
   render() {
+    // DISPLAY ERROR HERE IF EXISTS
     const displayError = !this.state.error ? (
       ""
     ) : (

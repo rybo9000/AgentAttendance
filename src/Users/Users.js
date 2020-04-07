@@ -10,16 +10,18 @@ import config from "../config/config.js";
 import "../config/style.css";
 import "./Users.css";
 
+// /USERS ENDPOINT
 class Users extends React.Component {
   constructor(props) {
     super(props);
 
+    // DEFAULT INFORMATION TO POPULATE BEFORE FETCH CALL
     const users = [
       { firstname: "John", lastname: "Riley", id: 1 },
       { firstname: "Bill", lastname: "Bellington", id: 2 },
       { firstname: "Tim", lastname: "Baker", id: 3 },
       { firstname: "Marcia", lastname: "Smith", id: 4 },
-      { firstname: "John", lastname: "Hughes", id: 5 }
+      { firstname: "John", lastname: "Hughes", id: 5 },
     ];
 
     this.state = {
@@ -29,11 +31,12 @@ class Users extends React.Component {
       password: "",
       email: "",
       users: users,
-      error: null
+      error: null,
     };
   }
 
   componentDidMount() {
+    // VERIFY JWT IF IT DOESN'T EXIST REDIRECT TO /LOGIN
     const token = localStorage.getItem("aatoken");
 
     if (!token) {
@@ -43,24 +46,25 @@ class Users extends React.Component {
 
       const options = {
         headers: {
-          mcid: decodedJWT.mcid
-        }
+          mcid: decodedJWT.mcid,
+        },
       };
 
       // FETCH CLASSES AND SET STATE
       fetch(`${config.REACT_APP_API_ENDPOINT}/api/mc/users`, options)
-        .then(response => response.json())
-        .then(users =>
+        .then((response) => response.json())
+        .then((users) =>
           this.setState({
-            users
+            users,
           })
         );
     }
   }
 
-  handleSubmit = e => {
+  handleSubmit = (e) => {
     e.preventDefault();
 
+    // PULL MCID VARIABLE FROM JWT TO INSERT INTO POST
     const token = localStorage.getItem("aatoken");
     const decodedJWT = JWT.verify(token, config.REACT_APP_JWT_SECRET);
     const mcid = decodedJWT.mcid;
@@ -72,17 +76,18 @@ class Users extends React.Component {
     const options = {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(newUser)
+      body: JSON.stringify(newUser),
     };
 
+    // CALL ENDPOINT TO CREATE A NEW USER
     fetch(`${config.REACT_APP_API_ENDPOINT}/api/mc/users`, options)
-      .then(response => response.json())
-      .then(response => {
+      .then((response) => response.json())
+      .then((response) => {
         if (response.error) {
           this.setState({
-            error: response.error
+            error: response.error,
           });
         } else {
           this.setState({
@@ -95,19 +100,20 @@ class Users extends React.Component {
               {
                 firstname: response[0].firstname,
                 lastname: response[0].lastname,
-                id: response[0].id
+                id: response[0].id,
               },
-              ...this.state.users
+              ...this.state.users,
             ],
-            error: null
+            error: null,
           });
         }
       });
   };
 
+  // UPDATE STATE IF A FORM FIELD CHANGES
   updateInput = (name, value) => {
     this.setState({
-      [name]: value
+      [name]: value,
     });
   };
 

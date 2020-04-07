@@ -7,6 +7,7 @@ import Nav from "../Nav/Nav";
 import "../config/style.css";
 import "./Header.css";
 
+// HEADER COMPONENT
 class MainHeader extends React.Component {
   render() {
     return (
@@ -15,7 +16,6 @@ class MainHeader extends React.Component {
           <div className="headerContent">
             <img src={logoSmall} alt="Agent Attendance Logo" />
             <BurgerMenu />
-            {/* <span className='hamburger'><img src={hamburgerWhite} alt='Hamburger Menu Icon' /></span> */}
             <Nav />
           </div>
         </div>

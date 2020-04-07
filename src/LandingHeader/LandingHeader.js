@@ -8,6 +8,7 @@ import landingLogo from "../img/landingLogo.png";
 import "../Landing/Landing.css";
 import "./LandingHeader.css";
 
+// HEADER COMPONENT FOR LANDING PAGE
 function LandingHeader() {
   return (
     <header className="landingHeader">

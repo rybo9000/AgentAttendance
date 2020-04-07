@@ -3,6 +3,7 @@ import React from "react";
 import "../config/style.css";
 import "./AddClass.css";
 
+// ADD CLASS COMPONENT
 function AddClass(props) {
   return (
     <section className="half" id="addClass">

@@ -3,6 +3,7 @@ import "./BurgerMenu.css";
 import { slide as Menu } from "react-burger-menu";
 import { Link } from "react-router-dom";
 
+// BURGER MENY ON SMALLER DEVICES
 class BurgerMenu extends React.Component {
   showSettings(event) {
     event.preventDefault();

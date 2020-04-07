@@ -5,6 +5,7 @@ import landingLogo from "../img/landingLogo.png";
 import "./Login.css";
 import config from "../config/config.js";
 
+// LOGIN PAGE
 class Login extends React.Component {
   constructor(props) {
     super(props);
@@ -14,17 +15,18 @@ class Login extends React.Component {
       password: "",
       marketcenter: null,
       mclist: [],
-      error: null
+      error: null,
     };
   }
 
   handleChange = (name, value) => {
     this.setState({
-      [name]: value
+      [name]: value,
     });
   };
 
-  submitHandler = e => {
+  // HANDLE SUBMIT
+  submitHandler = (e) => {
     e.preventDefault();
 
     const { username, password, mcid } = this.state;
@@ -32,43 +34,48 @@ class Login extends React.Component {
     const signupData = {
       username,
       password,
-      mcid
+      mcid,
     };
 
     const options = {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(signupData)
+      body: JSON.stringify(signupData),
     };
 
+    // POST TO ENDPOINT TO ATTEMPT SIGNIN
     fetch(`${config.REACT_APP_API_ENDPOINT}/api/signin`, options)
-      .then(response => response.json())
-      .then(response => {
+      .then((response) => response.json())
+      .then((response) => {
         let token = response;
 
+        // IF TOKEN COMES BACK SUCCESSFULLY PUT INTO LOCAL STORAGE AND REDIRECT
         if (typeof token === "string") {
           window.localStorage.setItem("aatoken", token);
           this.props.history.push("/main");
         } else {
+          // IF LOGIN UNSUCCESSFUL CLEAR FIELDS AND POST ERROR
           this.setState({
             username: "",
             password: "",
             marketcenter: null,
-            error: response.error
+            error: response.error,
           });
         }
       });
   };
 
   componentDidMount() {
+    // WHEN PAGE LOADS REMOVE LOCAL STORAGE IF IT EXISTS
     localStorage.removeItem("aatoken");
 
+    // PULL LIST OF CLASSES FROM DB TO POPULATE SELECT
     fetch(`${config.REACT_APP_API_ENDPOINT}/api/signin/classes`)
-      .then(response => response.json())
-      .then(response => {
-        const marketcenterlist = response.map(marketcenter => {
+      .then((response) => response.json())
+      .then((response) => {
+        const marketcenterlist = response.map((marketcenter) => {
           return (
             <option value={marketcenter.id} key={marketcenter.id}>
               {marketcenter.mcname}
@@ -77,12 +84,13 @@ class Login extends React.Component {
         });
 
         this.setState({
-          mclist: marketcenterlist
+          mclist: marketcenterlist,
         });
       });
   }
 
   render() {
+    // IF ERROR EXISTS DISPLAY HERE
     const displayError = !this.state.error ? (
       ""
     ) : (
@@ -106,7 +114,7 @@ class Login extends React.Component {
                   name="username"
                   className="loginControl"
                   value={this.state.username}
-                  onChange={e =>
+                  onChange={(e) =>
                     this.handleChange(e.target.name, e.target.value)
                   }
                 />
@@ -121,7 +129,7 @@ class Login extends React.Component {
                   name="password"
                   className="loginControl"
                   value={this.state.password}
-                  onChange={e =>
+                  onChange={(e) =>
                     this.handleChange(e.target.name, e.target.value)
                   }
                 />
@@ -135,7 +143,7 @@ class Login extends React.Component {
                   name="mcid"
                   className="loginControl"
                   value={this.state.mcid}
-                  onChange={e =>
+                  onChange={(e) =>
                     this.handleChange(e.target.name, e.target.value)
                   }
                 >
@@ -153,7 +161,7 @@ class Login extends React.Component {
                     this.state.mcid
                   )
                 }
-                onClick={e => this.submitHandler(e)}
+                onClick={(e) => this.submitHandler(e)}
               >
                 Login
               </button>

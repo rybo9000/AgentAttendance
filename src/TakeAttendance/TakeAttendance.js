@@ -7,6 +7,7 @@ import "../config/style.css";
 import config from "../config/config.js";
 import "./TakeAttendance.css";
 
+// SELECT A CLASS TO TAKE ATTENDANCE
 class TakeAttendance extends React.Component {
   constructor(props) {
     super(props);
@@ -48,6 +49,7 @@ class TakeAttendance extends React.Component {
   }
 
   render() {
+    // ITERATE THROUGH ARRAY AND BUILD CLASS LIST TO POPULATE GUI
     const classes = this.state.classname.map((theClass, index) => {
       const bgColor =
         index % 2 === 0 ? "whiteBackground" : "lightGrayBackground";

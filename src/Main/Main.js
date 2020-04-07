@@ -8,10 +8,12 @@ import Footer from "../Footer/Footer";
 import "../config/style.css";
 import "./Main.css";
 
+// MAIN PAGE AFTER SUCCESSFUL LOGIN
 class Main extends React.Component {
   constructor(props) {
     super(props);
 
+    // VERIFY JWT IF DOESN'T EXIST REDIRECT TO /LOGIN
     const token = localStorage.getItem("aatoken");
 
     if (!token) {

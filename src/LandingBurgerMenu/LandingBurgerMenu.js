@@ -3,6 +3,7 @@ import "./LandingBurgerMenu.css";
 import { slide as Menu } from "react-burger-menu";
 import { Link } from "react-router-dom";
 
+// BURGER MENU FOR LANDING PAGE
 class LandingBurgerMenu extends React.Component {
   showSettings(event) {
     event.preventDefault();

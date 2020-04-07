@@ -12,10 +12,12 @@ import config from "../config/config.js";
 import "../config/style.css";
 import "./Reports.css";
 
+// /REPORTS ENDPOINT
 class Reports extends React.Component {
   constructor(props) {
     super(props);
 
+    // SET INITIAL STATE
     this.state = {
       reportSelect: null,
       selectedClass: null,
@@ -24,6 +26,7 @@ class Reports extends React.Component {
     };
   }
 
+  // HANDLE FORM CHANGES AND APPLY TO STATE
   handleUpdate = (name, value) => {
     this.setState({
       [name]: value,
@@ -32,6 +35,7 @@ class Reports extends React.Component {
 
   fetchRows = (selectedClass) => {
     if (selectedClass !== "") {
+      // PULL MCID VARIABLE FROM JWT TO POPULATE CALL TO ENDPOINT
       const token = localStorage.getItem("aatoken");
       const decodedJWT = JWT.verify(token, config.REACT_APP_JWT_SECRET);
 
@@ -54,6 +58,7 @@ class Reports extends React.Component {
   };
 
   componentDidMount() {
+    // VERIFY TOKEN EXISTS IF NOT REDIRECT TO /LOGIN
     const token = localStorage.getItem("aatoken");
 
     if (!token) {

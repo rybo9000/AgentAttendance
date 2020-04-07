@@ -6,6 +6,7 @@ import go from "../img/go.png";
 import "../config/style.css";
 import "./User.css";
 
+// USER ITEM
 function User(props) {
   const theClass = `thing ${props.bgColor}`;
 

@@ -3,7 +3,9 @@ import React from "react";
 import "../config/style.css";
 import "./AddUser.css";
 
+// ADD USER COMPONENT
 function AddUser(props) {
+  // IF THERE'S AN ERROR PUT IN PROPS POPULATE IN GUI
   const errorDiv = props.error ? (
     <div className="errorDiv">{props.error}</div>
   ) : (

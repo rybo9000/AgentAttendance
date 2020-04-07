@@ -4,8 +4,13 @@ import "../config/style.css";
 import "./ReportOptionsByClass.css";
 
 class ReportOptionsByClass extends React.Component {
+  static defaultProps = {
+    classList: [],
+  };
+
   render() {
-    const classList = this.props.classList.map(cls => {
+    // ITERATE THROUGH ARRAY AND BUILD CLASS LIST TO POPULATE GUI
+    const classList = this.props.classList.map((cls) => {
       return (
         <option value={cls.id} key={cls.id}>
           {cls.classname}
@@ -17,7 +22,7 @@ class ReportOptionsByClass extends React.Component {
       <div className="reportOptionsSelector">
         <select
           value={this.props.selectedClass}
-          onChange={e => {
+          onChange={(e) => {
             this.props.handleUpdate(e.target.name, e.target.value);
             this.props.fetchRows(e.target.value);
           }}

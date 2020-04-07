@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import "../config/style.css";
 import "./Nav.css";
 
+// NAV COMPONENT
 function Nav() {
   return (
     <nav className="nav">

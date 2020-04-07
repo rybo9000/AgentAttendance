@@ -4,6 +4,7 @@ import JWT from "jsonwebtoken";
 import config from "../config/config.js";
 import "./CheckIn.css";
 
+// PAGE FOR USERS TO CHECK INTO CLASSES
 class CheckIn extends React.Component {
   constructor(props) {
     super(props);
@@ -12,19 +13,20 @@ class CheckIn extends React.Component {
       username: "",
       password: "",
       notification: "",
-      classname: ""
+      classname: "",
     };
   }
 
   updateInput = (name, value) => {
     this.setState({
-      [name]: value
+      [name]: value,
     });
   };
 
-  onSubmit = e => {
+  onSubmit = (e) => {
     e.preventDefault();
 
+    // PULL MCID FROM JWT TO POST
     const token = localStorage.getItem("aatoken");
     const decodedJWT = JWT.verify(token, config.REACT_APP_JWT_SECRET);
 
@@ -39,31 +41,32 @@ class CheckIn extends React.Component {
     const options = {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(checkInData)
+      body: JSON.stringify(checkInData),
     };
 
+    // ATTEMPT TO CHECKIN USER TO CLASS
     fetch(`${config.REACT_APP_API_ENDPOINT}/api/checkin`, options)
-      .then(response => response.json())
-      .then(response => {
+      .then((response) => response.json())
+      .then((response) => {
         console.log(response);
 
         if (response.notification.length) {
           this.setState({
             notification: response.notification,
             username: "",
-            password: ""
+            password: "",
           });
         } else {
           this.setState({
             username: "",
             password: "",
-            notification: "User Successfully Checked In"
+            notification: "User Successfully Checked In",
           });
         }
       })
-      .catch(response => console.log(response));
+      .catch((response) => console.log(response));
   };
 
   componentDidMount() {
@@ -73,18 +76,20 @@ class CheckIn extends React.Component {
       this.props.history.push("/login");
     }
 
+    // PULL THE CLASSNAME FROM THE DATABASE AND POPULATE INTO FORM
     fetch(
       `${config.REACT_APP_API_ENDPOINT}/api/mc/class?classid=${this.props.match.params.id}`
     )
-      .then(response => response.json())
-      .then(response => {
+      .then((response) => response.json())
+      .then((response) => {
         this.setState({
-          classname: response[0].classname
+          classname: response[0].classname,
         });
       });
   }
 
   render() {
+    // IF STATE.NOTIFICATION HAS A VALUE PUSH IT INTO THE GUI
     const notification = this.state.notification ? (
       <div className="notification">{this.state.notification}</div>
     ) : (
@@ -96,7 +101,7 @@ class CheckIn extends React.Component {
         <div className="checkinWrapper">
           <div className="checkinContainer">
             <div className="checkinForm">
-              <form className="checkinForm" onSubmit={e => this.onSubmit(e)}>
+              <form className="checkinForm" onSubmit={(e) => this.onSubmit(e)}>
                 <span className="checkingInto">You Are Checking Into</span>
                 <span className="theClassName">{this.state.classname}</span>
                 {notification}
@@ -110,7 +115,7 @@ class CheckIn extends React.Component {
                     name="username"
                     className="checkinControl"
                     value={this.state.username}
-                    onChange={e =>
+                    onChange={(e) =>
                       this.updateInput(e.target.name, e.target.value)
                     }
                   />
@@ -125,7 +130,7 @@ class CheckIn extends React.Component {
                     name="password"
                     className="checkinControl"
                     value={this.state.password}
-                    onChange={e =>
+                    onChange={(e) =>
                       this.updateInput(e.target.name, e.target.value)
                     }
                   />

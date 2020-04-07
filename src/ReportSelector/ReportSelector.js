@@ -3,13 +3,14 @@ import React from "react";
 import "../config/style.css";
 import "./ReportSelector.css";
 
+// DROP DOWN TO SELECT REPORT TO DISPLAY
 function ReportSelector(props) {
   return (
     <div className="reportSelector">
       <form>
         <label htmlFor="reportSelect">Select A Report:</label>
         <select
-          onChange={e => props.handleUpdate(e.target.name, e.target.value)}
+          onChange={(e) => props.handleUpdate(e.target.name, e.target.value)}
           value={props.reportSelect}
           id="reportSelect"
           name="reportSelect"

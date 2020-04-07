@@ -21,4 +21,8 @@ function Class(props) {
   );
 }
 
+Class.defaultProps = {
+  link: "test",
+};
+
 export default Class;

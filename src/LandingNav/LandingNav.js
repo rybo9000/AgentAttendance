@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./LandingNav.css";
 
+// NAV COMPONENT FOR LANDING PAGE
 function LandingNav() {
   return (
     <nav className="landingNav">

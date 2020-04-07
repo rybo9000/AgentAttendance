@@ -10,25 +10,28 @@ import config from "../config/config.js";
 import "../config/style.css";
 import "./Classes.css";
 
+// /CLASS ROUTE
 class Classes extends React.Component {
   constructor(props) {
     super(props);
 
+    // DEFAULT INFORMATION TO POPULATE BEFORE FETCH
     const mcclasses = [
       { name: "Orientation", id: 1 },
       { name: "Realty 101", id: 2 },
       { name: "Buying & Selling", id: 3 },
       { name: "Close The Deal", id: 4 },
-      { name: "Financing 101", id: 5 }
+      { name: "Financing 101", id: 5 },
     ];
 
     this.state = {
       classname: mcclasses,
-      classInput: ""
+      classInput: "",
     };
   }
 
   componentDidMount() {
+    // VERIFY JWT REDIRECT IF NOT AVAILABLE
     const token = localStorage.getItem("aatoken");
 
     if (!token) {
@@ -38,16 +41,16 @@ class Classes extends React.Component {
 
       const options = {
         headers: {
-          mcid: decodedJWT.mcid
-        }
+          mcid: decodedJWT.mcid,
+        },
       };
 
       // FETCH CLASSES AND SET STATE
       fetch(`${config.REACT_APP_API_ENDPOINT}/api/mc/classes`, options)
-        .then(response => response.json())
-        .then(classname =>
+        .then((response) => response.json())
+        .then((classname) =>
           this.setState({
-            classname
+            classname,
           })
         );
     }
@@ -55,13 +58,14 @@ class Classes extends React.Component {
 
   updateInput = (name, value) => {
     this.setState({
-      [name]: value
+      [name]: value,
     });
   };
 
-  handleSubmit = e => {
+  handleSubmit = (e) => {
     e.preventDefault();
 
+    // PULL MCID VARIABLE FROM JWT TO PUT INTO POST
     const token = localStorage.getItem("aatoken");
     const decodedJWT = JWT.verify(token, config.REACT_APP_JWT_SECRET);
 
@@ -74,20 +78,20 @@ class Classes extends React.Component {
     const options = {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(newClass)
+      body: JSON.stringify(newClass),
     };
 
     fetch(`${config.REACT_APP_API_ENDPOINT}/api/mc/classes`, options)
-      .then(response => response.json())
-      .then(response => {
+      .then((response) => response.json())
+      .then((response) => {
         this.setState({
           classInput: "",
           classname: [
             { classname: response.classname, id: response.id },
-            ...this.state.classname
-          ]
+            ...this.state.classname,
+          ],
         });
       });
   };
